@@ -1,0 +1,21 @@
+.navigationContainer {
+    display: flex;
+    padding: 32px;
+    .logoContainer {
+        svg {
+            height: 80px;
+        }
+    }
+    .mainNavigation {
+        .mainNavItem {
+            text-decoration: none;
+            color: white;
+            font-size: 180%;
+            margin-left: 52px;
+            transition: 0.2s ease-in-out;
+            &:hover {
+                color: rgb(236, 99, 19);
+            }
+        }
+    }
+}
