@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import './navigation.styles.scss';
 import { Link, useLocation } from "react-router-dom";
 import { ReactComponent as FleuryLogo } from '../../assets/fpLogo.svg';
@@ -6,6 +6,10 @@ import { ReactComponent as FleuryLogo } from '../../assets/fpLogo.svg';
 const Navigation = () => {
     const location = useLocation().pathname;
     const [menuOpen, setMenuOpen] = useState(false);
+
+    useEffect(() => {
+        setMenuOpen(false);
+    }, [location]);
 
     const mobileMenuClick = () => {
         setMenuOpen(!menuOpen);

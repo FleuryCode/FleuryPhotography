@@ -1,6 +1,11 @@
 .navigationContainer {
     display: flex;
     padding: 32px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 50;
 
     .logoContainer {
         svg {
@@ -13,6 +18,7 @@
 
     // Desktop Navigation
     .mainNavigation {
+        position: relative;
         .mainNavItem {
             text-decoration: none;
             color: white;
