@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import './homePage.styles.scss';
 // Hero Images
 import FoodImage from '../../assets/heroImages/frenchtoast_main.jpg';
@@ -9,66 +9,76 @@ import VideoImage from '../../assets/heroImages/beersplash_main.jpg';
 const Homepage = () => {
     const [imageIndex, setImageIndex] = useState(0);
     const [endAnim, setEndAnim] = useState(true);
-    const imageInfoArray = [
-        {
-            image: FoodImage,
-            enTitle: 'Food',
-            frTitle: 'Culinaire'
-        },
-        {
-            image: DrinkImage,
-            enTitle: 'Beverage',
-            frTitle: 'Boisson',
-        },
-        {
-            image: ProductImage,
-            enTitle: 'Product',
-            frTitle: 'Produit'
-        },
-        {
-            image: VideoImage,
-            enTitle: 'Video',
-            frTitle: 'VIDÉO'
-        }
-    ];
-    // Changing the Info based on Screen
+
+    const [test, setTest] = useState(true);
+    useEffect(() => {
+        console.log('Lets hope this works.');
+    }, [test]);
+
     window.addEventListener('mousewheel', (e) => {
-        const wheelDelta = e.wheelDelta;
-        // Rework code. Issues with re-rendering.
-        if (endAnim) {
-            if (wheelDelta > 0) {
-                setEndAnim(false);
-                if (imageIndex === 0) {
-                    setImageIndex(3);
-                    setTimeout(() => {
-                        setEndAnim(true);
-                    }, 800);
-                } else {
-                    setImageIndex(imageIndex - 1);
-                    setTimeout(() => {
-                        setEndAnim(true);
-                    }, 800);
-                };
-            } else if (wheelDelta < 0) {
-                setEndAnim(false);
-                if (imageIndex === 3) {
-                    setImageIndex(0);
-                    setTimeout(() => {
-                        setEndAnim(true);
-                    }, 800);
-                } else {
-                    setImageIndex(imageIndex + 1);
-                    setTimeout(() => {
-                        setEndAnim(true);
-                    }, 800);
-                };
-            };
+        const yDelta = e.wheelDeltaY;
+        if (yDelta / 120 > 0) {
+            setTimeout(() => {
+                setTest(!test);
+            }, 2000);
         }
     });
-    console.log(endAnim);
+
+    // Image Changing
+    // window.addEventListener('mousewheel', (e) => {
+    //     const yDelta = e.wheelDeltaY;
+    //     if(endAnim) {
+    //         setEndAnim(false);
+    //         if(yDelta / 120 > 0) {
+    //             if(imageIndex === 0) {
+    //                 setImageIndex(3);
+    //                 setTimeout(() => {
+    //                     setEndAnim(true);
+    //                 }, 800);
+    //             }else {
+    //                 setImageIndex(imageIndex - 1);
+    //                 setTimeout(() => {
+    //                     setEndAnim(true);
+    //                 }, 800);
+    //             }
+    //         }else {
+    //             if(imageIndex === 3) {
+    //                 setImageIndex(0);
+    //                 setTimeout(() => {
+    //                     setEndAnim(true);
+    //                 }, 800);
+    //             }else {
+    //                 setImageIndex(imageIndex + 1);
+    //                 setTimeout(() => {
+    //                     setEndAnim(true);
+    //                 }, 800);
+    //             }
+    //         }
+    //     }
+    // });
+
+
     return (
-        <div style={{ backgroundImage: `url(${imageInfoArray[imageIndex].image})` }} className="homepageContainer">
-            <h1>{imageInfoArray[imageIndex].enTitle}</h1>
+        <div className="homepageContainer">
+            <div style={{ transform: `translateY(-${imageIndex * 100}%)` }} className="innerContainer">
+                <div className="homeFoodContainer">
+                    <h1>Food</h1>
+                </div>
+                <div className="homeBeverageContainer">
+                    <h1>Drink</h1>
+                </div>
+                <div className="homeProductContainer">
+                    <h1>Product</h1>
+                </div>
+                <div className="homeVideoContainer">
+                    <h1>Video</h1>
+                </div>
+            </div>
+
+
+
+
+
         </div>
     );
 }
