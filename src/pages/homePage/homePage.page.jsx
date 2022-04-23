@@ -34,34 +34,38 @@ const Homepage = () => {
     // Changing the Info based on Screen
     window.addEventListener('mousewheel', (e) => {
         const wheelDelta = e.wheelDelta;
-        if (wheelDelta === 120 && endAnim === true) {
-            setEndAnim(false);
-            if (imageIndex === 0) {
-                setImageIndex(3);
-                setTimeout(() => {
-                    setEndAnim(true);
-                }, 800);
-            } else {
-                setImageIndex(imageIndex - 1);
-                setTimeout(() => {
-                    setEndAnim(true);
-                }, 800);
+        // Rework code. Issues with re-rendering.
+        if (endAnim) {
+            if (wheelDelta > 0) {
+                setEndAnim(false);
+                if (imageIndex === 0) {
+                    setImageIndex(3);
+                    setTimeout(() => {
+                        setEndAnim(true);
+                    }, 800);
+                } else {
+                    setImageIndex(imageIndex - 1);
+                    setTimeout(() => {
+                        setEndAnim(true);
+                    }, 800);
+                };
+            } else if (wheelDelta < 0) {
+                setEndAnim(false);
+                if (imageIndex === 3) {
+                    setImageIndex(0);
+                    setTimeout(() => {
+                        setEndAnim(true);
+                    }, 800);
+                } else {
+                    setImageIndex(imageIndex + 1);
+                    setTimeout(() => {
+                        setEndAnim(true);
+                    }, 800);
+                };
             };
-        } else if (wheelDelta === -120 && endAnim === true) {
-            setEndAnim(false);
-            if (imageIndex === 3) {
-                setImageIndex(0);
-                setTimeout(() => {
-                    setEndAnim(true);
-                }, 800);
-            } else {
-                setImageIndex(imageIndex + 1);
-                setTimeout(() => {
-                    setEndAnim(true);
-                }, 800);
-            };
-        };
+        }
     });
+    console.log(endAnim);
     return (
         <div style={{ backgroundImage: `url(${imageInfoArray[imageIndex].image})` }} className="homepageContainer">
             <h1>{imageInfoArray[imageIndex].enTitle}</h1>
