@@ -43,6 +43,12 @@
             background-size: cover;
             background-image: url('../../assets/heroImages/beersplash_main.jpg');
         }
+
+        .active {
+            h1 {
+                color: white;
+            }
+        }
     }
 
 
