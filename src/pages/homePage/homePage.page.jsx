@@ -40,12 +40,12 @@ const Homepage = () => {
                 setImageIndex(3);
                 setTimeout(() => {
                     setEndAnim(true);
-                }, 400);
+                }, 800);
             } else {
                 setImageIndex(imageIndex - 1);
                 setTimeout(() => {
                     setEndAnim(true);
-                }, 400);
+                }, 800);
             };
         } else if (wheelDelta === -120 && endAnim === true) {
             setEndAnim(false);
@@ -53,12 +53,12 @@ const Homepage = () => {
                 setImageIndex(0);
                 setTimeout(() => {
                     setEndAnim(true);
-                }, 400);
+                }, 800);
             } else {
                 setImageIndex(imageIndex + 1);
                 setTimeout(() => {
                     setEndAnim(true);
-                }, 400);
+                }, 800);
             };
         };
     });
