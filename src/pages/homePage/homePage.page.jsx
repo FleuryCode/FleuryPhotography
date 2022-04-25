@@ -1,10 +1,6 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import './homePage.styles.scss';
-// Hero Images
-import FoodImage from '../../assets/heroImages/frenchtoast_main.jpg';
-import DrinkImage from '../../assets/heroImages/floatingbeer_main.jpg';
-import ProductImage from '../../assets/heroImages/elianabowl_main.jpg';
-import VideoImage from '../../assets/heroImages/beersplash_main.jpg';
+import { Link } from "react-router-dom";
 
 const Homepage = () => {
     let imageIndex = 0;
@@ -62,23 +58,41 @@ const Homepage = () => {
 
     return (
         <div className="homepageContainer">
-            <div className={`homeFoodContainer hero1 active`}>
-                <h1>Food</h1>
+            <div className={`homeFoodContainer hero1 active justify-content-start justify-content-md-end`}>
+                <div className="homeTextInfo">
+                    <h1>Food</h1>
+                    <h2>Good photos of food evoke emotion. Great photos drive action; people visit restaurants, buy prepared dinners online, or try recipes they wouldn’t otherwise. Need photos for your restaurant website, culinary magazine, or blog? Contact us.</h2>
+                    <Link className="viewPortfolioButton" to={'/portfolio'}>View Portfolio</Link>
+                </div>
             </div>
-            <div className="homeBeverageContainer hero2">
-                <h1>Drink</h1>
+            <div className="homeBeverageContainer hero2 justify-content-start justify-content-md-end">
+                <div className="homeTextInfo">
+                    <h1>Drink</h1>
+                    <h2>An image is capable of influencing an individual to buy a fine wine, river beer, or happy hour cocktail, and that’s pretty powerful. Fleury Photography can shoot any beverage product to promote your brand and have the public thirsting for more.</h2>
+                    <Link className="viewPortfolioButton" to={'/portfolio'}>View Portfolio</Link>
+                </div>
             </div>
-            <div className="homeProductContainer hero3">
-                <h1>Product</h1>
+            <div className="homeProductContainer hero3 justify-content-start justify-content-md-end">
+                <div className="homeTextInfo">
+                    <h1>Product</h1>
+                    <h2>Commercial product photography is the house specialty. We have has worked with online retailers, technology vendors, beauty salons, and camera suppliers to give their products personality. Using a delicate balance of lighting and expert photography, we bring to life even the smallest details.</h2>
+                    <Link className="viewPortfolioButton" to={'/portfolio'}>View Portfolio</Link>
+                </div>
             </div>
-            <div className="homeVideoContainer hero4">
-                <h1>Video</h1>
+            <div className="homeVideoContainer hero4 justify-content-start justify-content-md-end">
+                <div className="homeTextInfo">
+                    <h1>Video</h1>
+                    <h2>Videos are the way forward. A good video can invoke someone to come to your restaurant, buy your beer or try your beauty products. Let us bring your vision into motion with our videography.</h2>
+                    <Link className="viewPortfolioButton" to={'/portfolio'}>View Portfolio</Link>
+                </div>
             </div>
-
-
-
-
-
+            <div className="mainArrowContainer">
+                <div className="arrowContainer">
+                    <div className="lineContainer">
+                        <div className="line"></div>
+                    </div>
+                </div>
+            </div>
         </div>
     );
 }
