@@ -2,58 +2,43 @@
     // padding-top: 120px;
     height: 100vh;
     width: 100%;
-    overflow: hidden;
+    // overflow: hidden;
 
-    .innerContainer {
-        width: 100%;
-        height: 100vh;
-        background-color: green;
-        white-space: nowrap;
-        transition: transform 0.4s;
-
-        .homeFoodContainer {
-            width: 100vw;
-            height: 100%;
-            padding-top: 120px;
-            background-repeat: no-repeat;
-            background-size: cover;
-            background-image: url('../../assets//heroImages/frenchtoast_main.jpg');
-        }
-
-        .homeBeverageContainer {
-            width: 100vw;
-            height: 100%;
-            background-repeat: no-repeat;
-            background-size: cover;
-            background-image: url('../../assets//heroImages/floatingbeer_main.jpg');
-        }
-
-        .homeProductContainer {
-            width: 100vw;
-            height: 100%;
-            background-repeat: no-repeat;
-            background-size: cover;
-            background-image: url('../../assets/heroImages/elianabowl_main.jpg');
-        }
-
-        .homeVideoContainer {
-            width: 100vw;
-            height: 100%;
-            background-repeat: no-repeat;
-            background-size: cover;
-            background-image: url('../../assets/heroImages/beersplash_main.jpg');
-        }
-
-        .active {
-            h1 {
-                color: white;
-            }
-        }
+    .homeFoodContainer,
+    .homeBeverageContainer,
+    .homeProductContainer,
+    .homeVideoContainer {
+        width: 100vw;
+        height: 100%;
+        padding-top: 120px;
+        position: absolute;
+        background-repeat: no-repeat;
+        background-size: cover;
+        transition: opacity 0.4s ease-in-out;
     }
 
 
+    .homeFoodContainer {
+        opacity: 0;
+        background-image: url('../../assets//heroImages/frenchtoast_main.jpg');
+    }
 
+    .homeBeverageContainer {
+        opacity: 0;
+        background-image: url('../../assets//heroImages/floatingbeer_main.jpg');
+    }
 
+    .homeProductContainer {
+        opacity: 0;
+        background-image: url('../../assets/heroImages/elianabowl_main.jpg');
+    }
 
+    .homeVideoContainer {
+        opacity: 0;
+        background-image: url('../../assets/heroImages/beersplash_main.jpg');
+    }
 
+    .active {
+        opacity: 1;
+    }
 }

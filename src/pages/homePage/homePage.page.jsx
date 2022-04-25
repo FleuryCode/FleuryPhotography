@@ -64,19 +64,17 @@ const Homepage = () => {
 
     return (
         <div className="homepageContainer">
-            <div style={{ transform: `translateY(-${imageIndex * 100}%)` }} className="innerContainer">
-                <div className={`homeFoodContainer hero1 active`}>
-                    <h1>Food</h1>
-                </div>
-                <div className="homeBeverageContainer hero2">
-                    <h1>Drink</h1>
-                </div>
-                <div className="homeProductContainer hero3">
-                    <h1>Product</h1>
-                </div>
-                <div className="homeVideoContainer hero4">
-                    <h1>Video</h1>
-                </div>
+            <div className={`homeFoodContainer hero1 active`}>
+                <h1>Food</h1>
+            </div>
+            <div className="homeBeverageContainer hero2">
+                <h1>Drink</h1>
+            </div>
+            <div className="homeProductContainer hero3">
+                <h1>Product</h1>
+            </div>
+            <div className="homeVideoContainer hero4">
+                <h1>Video</h1>
             </div>
 
 
