@@ -14,7 +14,6 @@ const Homepage = () => {
         if (endAnim) {
             if (yDelta / 120 > 0) {
                 if (imageIndex === 0) {
-                    console.log('Scroll Up');
                     endAnim = false;
                     imageIndex = 3;
                     const addHeroElement = document.querySelector(`.hero${imageIndex + 1}`);
@@ -22,7 +21,6 @@ const Homepage = () => {
                     addHeroElement.classList.add('active');
                     removeHeroElement.classList.remove('active');
                     setTimeout(() => {
-                        console.log('Can Scroll')
                         endAnim = true;
                     }, 600);
                 } else {
