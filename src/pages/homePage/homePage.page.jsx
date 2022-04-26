@@ -9,6 +9,7 @@ const Homepage = ({ language }) => {
     let endAnim = true;
 
     useEffect(() => {
+        // Resetting Classes
         const foodActive = document.querySelector('.hero1');
         const drinkDeactive = document.querySelector('.hero2');
         const productDeactive = document.querySelector('.hero3');

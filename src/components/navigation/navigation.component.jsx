@@ -96,7 +96,7 @@ const Navigation = ({ language, setLanguage }) => {
                     </div>
                     <div className={`${menuOpen ? 'd-flex' : 'd-none'} mobileNavLinks`}>
                         <Link className="mobileNavItem" to={'/portfolio'}>PORTFOLIO</Link>
-                        <Link className="mobileNavItem" to={'/about'}>ABOUT</Link>
+                        <Link className="mobileNavItem" to={'/about'}>{(language === 'FR') ? 'BIO' : 'ABOUT'}</Link>
                         <Link className="mobileNavItem" to={'/contact'}>CONTACT</Link>
                     </div>
                 </div>
