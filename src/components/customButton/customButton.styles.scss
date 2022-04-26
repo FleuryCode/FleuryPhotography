@@ -1,0 +1,9 @@
+.customButtonContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    .spinner-border {
+        color: black; //Spinner color
+    }
+    // Include specificClass style changes here with &
+}
