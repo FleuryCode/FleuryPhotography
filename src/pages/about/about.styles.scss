@@ -1,0 +1,65 @@
+.aboutPageContainer {
+    width: 100%;
+    padding: 0;
+    padding-bottom: 4%;
+
+    .aboutImageContainer {
+        width: 100%;
+        padding: 0;
+
+        img {
+            width: 100%;
+            min-height: 20vh;
+            object-fit: cover;
+        }
+    }
+
+    .aboutTitleContainer {
+        display: flex;
+        justify-content: center;
+        margin-top: -100px;
+
+        h1 {
+            text-align: center;
+        }
+    }
+
+    .aboutTextContainer {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+
+        h4 {
+            font-size: 180%;
+            font-weight: 400;
+        }
+    }
+
+    .profilePictureContainer {
+        margin: 0 auto;
+        width: 90%;
+
+        img {
+            width: 100%;
+        }
+    }
+
+    .clientInfo {
+        margin-top: 40px;
+        h2 {
+            font-size: 220%;
+        }
+
+        a {
+            font-size: 140%;
+            margin-bottom: 8px;
+            text-decoration: none;
+            color: black;
+            transition: color 0.2s ease-in-out;
+            &:hover {
+                color: rgb(155, 72, 24);
+            }
+        }
+    }
+}
