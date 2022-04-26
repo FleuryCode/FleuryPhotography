@@ -27,14 +27,14 @@ const AboutPage = ({ language }) => {
             </div>
             <div className="row">
                 <div className="col-12 aboutTitleContainer">
-                    <h1>About</h1>
+                    <h1>{(language === 'FR') ? "Bio" : "About"}</h1>
                 </div>
             </div>
             <div className="row">
                 <div className="col-12 col-md-8 aboutTextContainer p-4 p-md-3">
-                    <h4>Julien Fleury is a photographer and videographer working out of both Nice, France. Specializing in commercial food photography for restaurants, beverage photography for breweries and product photography for companies trying to showcase their products in a creative way.</h4>
+                    <h4>{(language === 'FR') ? "Julien Fleury est un photographe et vidéaste qui travaille à la fois à Nice, France, à Paris, France et à Austin, Texas. Spécialisé dans la photographie alimentaire commerciale pour les restaurants, la photographie de boissons pour les brasseries et la photographie de produits pour les entreprises essayant de présenter leurs produits de manière créative" : "Julien Fleury is a photographer and videographer working out of both Nice, France. Specializing in commercial food photography for restaurants, beverage photography for breweries and product photography for companies trying to showcase their products in a creative way."}</h4>
                     <br /><br />
-                    <h4>Traveling the world as an international food photographer, Julien has worked with many different clients and cuisines. Being from France, food is a major inspiration for him and he tries to bring the love for food and drink into his work.</h4>
+                    <h4>{(language === 'FR') ? "Voyageant à travers le monde en tant que photographe culinaire international, Julien a travaillé avec de nombreux clients et cuisines différents. Originaire de France, la nourriture est une source d'inspiration majeure pour lui et il essaie d'intégrer l'amour de la nourriture et des boissons dans son travail." : "Traveling the world as an international food photographer, Julien has worked with many different clients and cuisines. Being from France, food is a major inspiration for him and he tries to bring the love for food and drink into his work."}</h4>
                 </div>
                 <div className="col-12 col-md-4">
                     <div className="profilePictureContainer">
@@ -45,7 +45,7 @@ const AboutPage = ({ language }) => {
                     <div className="container clientInfo">
                         <div className="row">
                             <div className="col-12">
-                                <h2>Client List:</h2>
+                                <h2>{(language === 'FR') ? "Liste de Clients:" : "Client List:"}</h2>
                             </div>
                         </div>
                         <div className="row">
