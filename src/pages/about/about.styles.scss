@@ -1,7 +1,7 @@
 .aboutPageContainer {
     width: 100%;
     padding: 0;
-    padding-bottom: 4%;
+    padding-bottom: 2%;
 
     .aboutImageContainer {
         width: 100%;
@@ -47,6 +47,8 @@
 
     .clientInfo {
         margin-top: 40px;
+        margin-bottom: 40px;
+
         h2 {
             font-size: 220%;
         }
@@ -57,9 +59,19 @@
             text-decoration: none;
             color: black;
             transition: color 0.2s ease-in-out;
+
             &:hover {
                 color: rgb(155, 72, 24);
             }
         }
     }
+
+    .videoContainer {
+        max-height: 20vh;
+        @media (min-width: 768px) {
+            max-height: 50vh;
+        }
+    }
+
+
 }

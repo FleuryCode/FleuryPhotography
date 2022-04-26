@@ -1,14 +1,17 @@
 import React from "react";
 import './about.styles.scss';
+import FooterComponent from "../../components/footer/footer.component";
 import AboutHeader from '../../assets/headers/aboutHeader.png';
 import JFleuryProfile from '../../assets/jfleuryProfile.jpg';
 import YouTube from "react-youtube";
 // Redux
 import { connect } from "react-redux";
 
+
 const AboutPage = ({ language }) => {
+
     const videoOpts = {
-        height: '640px',
+        height: '700px',
         width: '100%',
         playersVars: {
             autoplay: 1,
@@ -46,7 +49,7 @@ const AboutPage = ({ language }) => {
                             </div>
                         </div>
                         <div className="row">
-                            <div className="col-6 d-flex flex-column">
+                            <div className="col-12 col-md-6 d-flex flex-column">
                                 <a href="https://perryssteakhouse.com/" target={'_blank'} rel="noreferrer" >- Perry's Steakhouse</a>
                                 <a href="https://amysicecreams.com/" target={'_blank'} rel="noreferrer">- Amy's Ice Creams</a>
                                 <a href="https://www.lepotagerdecharlotte.fr/en/" target={'_blank'} rel="noreferrer">- Le Potager de Charlotte</a>
@@ -55,7 +58,7 @@ const AboutPage = ({ language }) => {
                                 <a href="https://www.theaustinwinery.com/" target={'_blank'} rel="noreferrer">- The Austin Winery</a>
                                 <a href="https://www.elianabernard.com/" target={'_blank'} rel="noreferrer">- Eliana Bernard Ceramics</a>
                             </div>
-                            <div className="col-6 d-flex flex-column">
+                            <div className="col-12 col-md-6 d-flex flex-column">
                                 <a href="https://carveamericangrille.com/" target={'_blank'} rel="noreferrer">- CARVE</a>
                                 <a href="https://www.hopsandgrain.com/" target={'_blank'} rel="noreferrer">- Hops &amp; Grains</a>
                                 <a href="https://www.ottobock.com/en-us/homepage" target={'_blank'} rel="noreferrer">- Ottobock</a>
@@ -68,8 +71,13 @@ const AboutPage = ({ language }) => {
                 </div>
             </div>
             <div className="row">
-                <div className="col-12 p-5">
-                    <YouTube videoId="qJl6OHd0sUM" opts={videoOpts} />
+                <div className="col-12 p-3">
+                    <YouTube className="videoContainer" videoId="qJl6OHd0sUM" opts={videoOpts} />
+                </div>
+            </div>
+            <div className="row">
+                <div className="col-12">
+                    <FooterComponent />
                 </div>
             </div>
         </div>
