@@ -45,7 +45,7 @@ const Navigation = ({ language, setLanguage }) => {
             <div className="mainNavigation d-none d-md-flex">
                 <div className="mainNavLinks">
                     <Link className="mainNavItem" to={'/portfolio'}>PORTFOLIO</Link>
-                    <Link className="mainNavItem" to={'/about'}>ABOUT</Link>
+                    <Link className="mainNavItem" to={'/about'}>{(language === 'FR') ? 'BIO' : 'ABOUT'}</Link>
                     <Link className="mainNavItem" to={'/contact'}>CONTACT</Link>
                 </div>
                 <div className="socialNav">
