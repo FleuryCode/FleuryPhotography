@@ -49,17 +49,17 @@ const Navigation = ({ language, setLanguage }) => {
                     <Link className="mainNavItem" to={'/contact'}>CONTACT</Link>
                 </div>
                 <div className="socialNav">
-                    <a href="mailto:julien@fleuryphotography.com" target={'_blank'}>
+                    <a href="mailto:julien@fleuryphotography.com" target={'_blank'} rel="noreferrer">
                         <div className="socialIconContainer">
                             <MailIcon />
                         </div>
                     </a>
-                    <a href="https://www.instagram.com/fleuryphotography/" target={'_blank'}>
+                    <a href="https://www.instagram.com/fleuryphotography/" target={'_blank'} rel="noreferrer">
                         <div className="socialIconContainer">
                             <InstagramIcon />
                         </div>
                     </a>
-                    <a href="https://www.linkedin.com/in/julienfleuryphoto/" target={'_blank'}>
+                    <a href="https://www.linkedin.com/in/julienfleuryphoto/" target={'_blank'} rel="noreferrer">
                         <div className="socialIconContainer">
                             <LinkedInIcon />
                         </div>
@@ -69,17 +69,17 @@ const Navigation = ({ language, setLanguage }) => {
 
             <div className="mobileNavigation d-flex d-md-none">
                 <div className="mobileSocialNav">
-                    <a href="mailto:julien@fleuryphotography.com" target={'_blank'}>
+                    <a href="mailto:julien@fleuryphotography.com" target={'_blank'} rel="noreferrer">
                         <div className="socialIconContainer">
                             <MailIcon />
                         </div>
                     </a>
-                    <a href="https://www.instagram.com/fleuryphotography/" target={'_blank'}>
+                    <a href="https://www.instagram.com/fleuryphotography/" target={'_blank'} rel="noreferrer">
                         <div className="socialIconContainer">
                             <InstagramIcon />
                         </div>
                     </a>
-                    <a href="https://www.linkedin.com/in/julienfleuryphoto/" target={'_blank'}>
+                    <a href="https://www.linkedin.com/in/julienfleuryphoto/" target={'_blank'} rel="noreferrer">
                         <div className="socialIconContainer">
                             <LinkedInIcon />
                         </div>
