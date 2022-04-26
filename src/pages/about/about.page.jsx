@@ -2,10 +2,19 @@ import React from "react";
 import './about.styles.scss';
 import AboutHeader from '../../assets/headers/aboutHeader.png';
 import JFleuryProfile from '../../assets/jfleuryProfile.jpg';
+import YouTube from "react-youtube";
 // Redux
 import { connect } from "react-redux";
 
 const AboutPage = ({ language }) => {
+    const videoOpts = {
+        height: '640px',
+        width: '100%',
+        playersVars: {
+            autoplay: 1,
+            modestbranding: 1,
+        },
+    };
     return (
         <div className="aboutPageContainer container-fluid">
             <div className="row">
@@ -56,6 +65,11 @@ const AboutPage = ({ language }) => {
                             </div>
                         </div>
                     </div>
+                </div>
+            </div>
+            <div className="row">
+                <div className="col-12 p-5">
+                    <YouTube videoId="qJl6OHd0sUM" opts={videoOpts} />
                 </div>
             </div>
         </div>
