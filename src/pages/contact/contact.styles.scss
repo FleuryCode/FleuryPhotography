@@ -1,0 +1,31 @@
+.contactPageContainer {
+    width: 100%;
+    padding: 0;
+    padding-bottom: 2%;
+
+    .contactImageContainer {
+        width: 100%;
+        padding: 0;
+
+        img {
+            width: 100%;
+            min-height: 20vh;
+            object-fit: cover;
+        }
+    }
+
+    .contactTitleContainer {
+        display: flex;
+        justify-content: center;
+        margin-top: 20px;
+        h1 {
+            text-align: center;
+        }
+    }
+
+    .contactFormContainer {
+        label {
+            margin-top: 8px;
+        }
+    }
+}
