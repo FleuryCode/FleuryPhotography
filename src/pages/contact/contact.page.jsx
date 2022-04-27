@@ -4,6 +4,7 @@ import ContactHeader from '../../assets/headers/contactHeader.png';
 import CustomInput from '../../components/customInput/customInput.component';
 import CustomTextArea from "../../components/customTexArea/customTextArea.component";
 import CustomButton from '../../components/customButton/customButton.component';
+import Footer from "../../components/footer/footer.component";
 import { KEYS } from "../../Keys";
 import axios from "axios";
 // RECAPTHCA
@@ -61,7 +62,7 @@ const ContactPage = ({ language }) => {
     };
 
     const messageSendButtonClick = async (event) => {
-        if(firstName !== '' && lastName !== '' && email !== '' && phone !== '' && message !== '') {
+        if (firstName !== '' && lastName !== '' && email !== '' && phone !== '' && message !== '') {
             event.preventDefault();
             setMessageSending(true);
             await sendAxiosMessage();
@@ -70,7 +71,7 @@ const ContactPage = ({ language }) => {
             setDisplayMessage((language === 'FR') ? "Veuillez entrer toutes les informations SVP" : "Please fill in all the information");
             setMessageSent(true);
         }
-        
+
     }
     const inputChangeHandle = (event) => {
         const { name, value } = event.target;
@@ -127,11 +128,19 @@ const ContactPage = ({ language }) => {
                     <CustomTextArea specificClass={'contactTextArea'} id={'message'} name={'message'} value={message} placeholder={'Message'} onChangeHandle={inputChangeHandle} />
                     <label htmlFor="message">Message</label>
                 </div>
+                <div className="col-12 d-flex justify-content-center">
+                    <h5 className={ `${messageSent ? 'd-flex' : 'd-none'} displayMessage`} >{displayMessage}</h5>
+                </div>
                 <div className="col-12 col-sm-6 col-md-8 mb-3">
                     <ReCAPTCHA size="compact" theme="light" ref={recaptchaRef} sitekey={recaptchaKey} onChange={updateRecaptcha} />
                 </div>
                 <div className="col-8 col-sm-4 col-md-2 ms-auto me-auto me-md-0 mb-3">
                     <CustomButton text={(language === 'FR') ? 'Envoyer' : 'Send'} specificClass={'contactButton'} asyncHandle={messageSending} onClickHandle={messageSendButtonClick} />
+                </div>
+            </div>
+            <div className="row">
+                <div className="col-12">
+                    <Footer />
                 </div>
             </div>
         </div>
