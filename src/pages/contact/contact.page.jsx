@@ -2,6 +2,10 @@ import React, { useState } from "react";
 import './contact.styles.scss';
 import ContactHeader from '../../assets/headers/contactHeader.png';
 import CustomInput from '../../components/customInput/customInput.component';
+import CustomTextArea from "../../components/customTexArea/customTextArea.component";
+import { KEYS } from "../../Keys";
+// RECAPTHCA
+import ReCAPTCHA from "react-google-recaptcha";
 // Redux
 import { connect } from "react-redux";
 
@@ -11,6 +15,19 @@ const ContactPage = ({ language }) => {
     const [email, setEmail] = useState('');
     const [phone, setPhone] = useState('');
     const [message, setMessage] = useState('');
+    const [recaptchaToken, setRecaptchaToken] = useState('');
+    const [messageSending, setMessageSending] = useState(false);
+    const [messageSent, setMessageSent] = useState(false);
+
+    // ReCAPTCHA
+    const recaptchaRef = React.useRef();
+    const recaptchaKey = KEYS.RECAPTCHA_KEY;
+    const updateRecaptcha = (token) => {
+        setRecaptchaToken(token);
+    };
+    // FormSpark
+    const formSparkId = KEYS.FORMSPARK_ID;
+    const formSparkUrl = `https://submit-form.com/${formSparkId}`;
 
     const inputChangeHandle = (event) => {
         const { name, value } = event.target;
@@ -64,7 +81,14 @@ const ContactPage = ({ language }) => {
                     <label htmlFor="phone">{(language === 'FR') ? "Numéro" : "Number"}</label>
                 </div>
                 <div className="col-12 mb-4">
-                    
+                    <CustomTextArea specificClass={'contactTextArea'} id={'message'} name={'message'} value={message} placeholder={'Message'} onChangeHandle={inputChangeHandle} />
+                    <label htmlFor="message">Message</label>
+                </div>
+                <div className="col-12 col-sm-6 col-md-8">
+                    <ReCAPTCHA size="compact" theme="light" ref={recaptchaRef} sitekey={recaptchaKey} onChange={updateRecaptcha} />
+                </div>
+                <div className="col-12 col-sm-6 col-md-4">
+
                 </div>
             </div>
         </div>
