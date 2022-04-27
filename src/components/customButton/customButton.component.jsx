@@ -7,7 +7,7 @@ const CustomButton = ({ text, specificClass, asyncHandle, onClickHandle }) => {
             {
                 asyncHandle ?
                     <div className="spinner-border" role="status">
-                        <span className="sr-only">Loading...</span>
+                        <span className="sr-only"></span>
                     </div>
                     :
                     text

@@ -3,7 +3,9 @@ import './contact.styles.scss';
 import ContactHeader from '../../assets/headers/contactHeader.png';
 import CustomInput from '../../components/customInput/customInput.component';
 import CustomTextArea from "../../components/customTexArea/customTextArea.component";
+import CustomButton from '../../components/customButton/customButton.component';
 import { KEYS } from "../../Keys";
+import axios from "axios";
 // RECAPTHCA
 import ReCAPTCHA from "react-google-recaptcha";
 // Redux
@@ -18,6 +20,7 @@ const ContactPage = ({ language }) => {
     const [recaptchaToken, setRecaptchaToken] = useState('');
     const [messageSending, setMessageSending] = useState(false);
     const [messageSent, setMessageSent] = useState(false);
+    const [displayMessage, setDisplayMessage] = useState('');
 
     // ReCAPTCHA
     const recaptchaRef = React.useRef();
@@ -29,6 +32,46 @@ const ContactPage = ({ language }) => {
     const formSparkId = KEYS.FORMSPARK_ID;
     const formSparkUrl = `https://submit-form.com/${formSparkId}`;
 
+    // Axios Sending
+    const sendAxiosMessage = async () => {
+        const payload = {
+            email: email,
+            FirstName: firstName,
+            LastName: lastName,
+            phone: phone,
+            message: message,
+            "g-recpatcha-response": recaptchaToken
+        };
+        // Sending to FormSpark
+        try {
+            await axios.post(formSparkUrl, payload);
+            // Reset Fields
+            setFirstName('');
+            setLastName('');
+            setEmail('');
+            setPhone('');
+            setMessage('');
+            setDisplayMessage((language === 'FR') ? "Merci pour votre message" : "Thank you for your message");
+            setMessageSent(true);
+        } catch (error) {
+            console.log(error);
+            setDisplayMessage((language === 'FR') ? "Désolé, quelque chose s'est mal passé" : "Sorry, something went wrong");
+            setMessageSent(true);
+        }
+    };
+
+    const messageSendButtonClick = async (event) => {
+        if(firstName !== '' && lastName !== '' && email !== '' && phone !== '' && message !== '') {
+            event.preventDefault();
+            setMessageSending(true);
+            await sendAxiosMessage();
+            setMessageSending(false);
+        } else {
+            setDisplayMessage((language === 'FR') ? "Veuillez entrer toutes les informations SVP" : "Please fill in all the information");
+            setMessageSent(true);
+        }
+        
+    }
     const inputChangeHandle = (event) => {
         const { name, value } = event.target;
         switch (name) {
@@ -84,11 +127,11 @@ const ContactPage = ({ language }) => {
                     <CustomTextArea specificClass={'contactTextArea'} id={'message'} name={'message'} value={message} placeholder={'Message'} onChangeHandle={inputChangeHandle} />
                     <label htmlFor="message">Message</label>
                 </div>
-                <div className="col-12 col-sm-6 col-md-8">
+                <div className="col-12 col-sm-6 col-md-8 mb-3">
                     <ReCAPTCHA size="compact" theme="light" ref={recaptchaRef} sitekey={recaptchaKey} onChange={updateRecaptcha} />
                 </div>
-                <div className="col-12 col-sm-6 col-md-4">
-
+                <div className="col-8 col-sm-4 col-md-2 ms-auto me-auto me-md-0 mb-3">
+                    <CustomButton text={(language === 'FR') ? 'Envoyer' : 'Send'} specificClass={'contactButton'} asyncHandle={messageSending} onClickHandle={messageSendButtonClick} />
                 </div>
             </div>
         </div>
