@@ -40,7 +40,7 @@ const ContactPage = ({ language }) => {
             LastName: lastName,
             phone: phone,
             message: message,
-            "g-recpatcha-response": recaptchaToken
+            "g-recaptcha-response": recaptchaToken
         };
         // Sending to FormSpark
         try {
