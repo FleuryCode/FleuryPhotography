@@ -70,7 +70,7 @@ const SpecificPortfolioPage = ({ language, setLanguage }) => {
                         (portfolio === 'Video') ?
                             <VideoPortfolio />
                             :
-                            <ImagePortfolio />
+                            <ImagePortfolio/>
                     }
                 </div>
             </div>
