@@ -1,0 +1,22 @@
+.specificPortfolioPageContainer {
+    width: 100%;
+    padding: 0;
+    padding-bottom: 2%;
+    .specificImageContainer {
+        width: 100%;
+        padding: 0;
+        img {
+            width: 100%;
+            min-height: 20vh;
+            object-fit: cover;
+        }
+    }
+    .specificTitleContainer {
+        display: flex;
+        justify-content: center;
+        margin-top: -100px;
+        h1 {
+            text-align: center;
+        }
+    }
+}
