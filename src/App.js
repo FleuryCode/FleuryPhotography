@@ -27,10 +27,12 @@ const App = ({ language }) => {
         <Route path='/about' element={<AboutPage />} />
         <Route path='/contact' element={<ContactPage />} />
         <Route path='/portfolio' element={<PortfolioPage />} />
+        <Route path='/portfolio/:specificPortfolio' element={<SpecificPortfolioPage />} />
         <Route path='/en' element={<Homepage />} />
         <Route path='/en/about' element={<AboutPage />} />
         <Route path='/en/contact' element={<ContactPage />} />
         <Route path='/en/portfolio' element={<PortfolioPage />} />
+        <Route path='/en/portfolio/:specificPortfolio' element={<SpecificPortfolioPage />} />
       </Routes>
     </div>
   );

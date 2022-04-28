@@ -29,22 +29,22 @@ const PortfolioPage = ({ language, setLanguage }) => {
             </div>
             <div className="row portfolioSelectors">
                 <div className="col-12 col-lg-3">
-                    <Link to={'/'} className="portfolioSelectorContainer foodSelector">
+                    <Link to={(language === 'FR') ? '/portfolio/food' : '/en/portfolio/food'} className="portfolioSelectorContainer foodSelector">
                         <h2>{(language === 'FR') ? 'Culinaire' : 'Food'}</h2>
                     </Link>
                 </div>
                 <div className="col-12 col-lg-3">
-                    <Link to={'/'} className="portfolioSelectorContainer beverageSelector">
+                    <Link to={(language === 'FR') ? '/portfolio/beverage' : '/en/portfolio/beverage'} className="portfolioSelectorContainer beverageSelector">
                         <h2>{(language === 'FR') ? 'Boissons' : 'Beverage'}</h2>
                     </Link>
                 </div>
                 <div className="col-12 col-lg-3">
-                    <Link to={'/'} className="portfolioSelectorContainer productSelector">
+                    <Link to={(language === 'FR') ? '/portfolio/product' : '/en/portfolio/product'} className="portfolioSelectorContainer productSelector">
                         <h2>{(language === 'FR') ? 'Produit' : 'Product'}</h2>
                     </Link>
                 </div>
                 <div className="col-12 col-lg-3">
-                    <Link to={'/'} className="portfolioSelectorContainer videoSelector">
+                    <Link to={(language === 'FR') ? '/portfolio/video' : '/en/portfolio/video'} className="portfolioSelectorContainer videoSelector">
                         <h2>{(language === 'FR') ? 'Vidéo' : 'Video'}</h2>
                     </Link>
                 </div>
