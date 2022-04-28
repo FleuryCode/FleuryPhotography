@@ -29,14 +29,18 @@ const Navigation = ({ language, setLanguage }) => {
             {/* Logo and LangSwitch Container */}
             <div className="logoContainer me-auto">
                 {
-                    (location === '/') ?
+                    (location === '/' || location === '/en') ?
                         <div className="langSwitch">
-                            <h5 onClick={() => languageClick('FR')} className={`${(language === 'FR') ? 'activeLang' : ''}`}>FR</h5>
+                            <Link className="langNav" to={'/'}>
+                                <h5 onClick={() => languageClick('FR')} className={`${(language === 'FR') ? 'activeLang' : ''}`}>FR</h5>
+                            </Link>
                             <h6>-</h6>
-                            <h5 onClick={() => languageClick('EN')} className={`${(language === 'EN') ? 'activeLang' : ''}`}>EN</h5>
+                            <Link className="langNav" to={'/en'}>
+                                <h5 onClick={() => languageClick('EN')} className={`${(language === 'EN') ? 'activeLang' : ''}`}>EN</h5>
+                            </Link>
                         </div>
                         :
-                        <Link to={'/'}>
+                        <Link to={(location === 'FR') ? '/' : '/en'}>
                             <FleuryLogo />
                         </Link>
                 }
@@ -44,9 +48,9 @@ const Navigation = ({ language, setLanguage }) => {
             </div>
             <div className="mainNavigation d-none d-md-flex">
                 <div className="mainNavLinks">
-                    <Link className="mainNavItem" to={'/portfolio'}>PORTFOLIO</Link>
-                    <Link className="mainNavItem" to={'/about'}>{(language === 'FR') ? 'BIO' : 'ABOUT'}</Link>
-                    <Link className="mainNavItem" to={'/contact'}>CONTACT</Link>
+                    <Link className="mainNavItem" to={(language === 'FR') ? '/portfolio' : '/en/portfolio'}>PORTFOLIO</Link>
+                    <Link className="mainNavItem" to={(language === 'FR') ? '/about' : '/en/about'}>{(language === 'FR') ? 'BIO' : 'ABOUT'}</Link>
+                    <Link className="mainNavItem" to={(language === 'FR') ? '/contact' : '/en/contact'}>CONTACT</Link>
                 </div>
                 <div className="socialNav">
                     <a href="mailto:julien@fleuryphotography.com" target={'_blank'} rel="noreferrer">
@@ -95,9 +99,9 @@ const Navigation = ({ language, setLanguage }) => {
                         </div>
                     </div>
                     <div className={`${menuOpen ? 'd-flex' : 'd-none'} mobileNavLinks`}>
-                        <Link className="mobileNavItem" to={'/portfolio'}>PORTFOLIO</Link>
-                        <Link className="mobileNavItem" to={'/about'}>{(language === 'FR') ? 'BIO' : 'ABOUT'}</Link>
-                        <Link className="mobileNavItem" to={'/contact'}>CONTACT</Link>
+                        <Link className="mobileNavItem" to={(language === 'FR') ? '/portfolio' : '/en/portfolio'}>PORTFOLIO</Link>
+                        <Link className="mobileNavItem" to={(language === 'FR') ? '/about' : '/en/portfolio'}>{(language === 'FR') ? 'BIO' : 'ABOUT'}</Link>
+                        <Link className="mobileNavItem" to={(language === 'FR') ? '/contact' : '/en/contact'}>CONTACT</Link>
                     </div>
                 </div>
 

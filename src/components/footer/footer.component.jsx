@@ -10,10 +10,10 @@ const Footer = ({ language }) => {
             <div className="row">
                 <div className="col-12">
                     <nav className="footerNav">
-                        <Link className="footerNavItem" to={'/'}>Home</Link>
-                        <Link className="footerNavItem" to={'/portfolio'}>Portfolio</Link>
-                        <Link className="footerNavItem" to={'/about'}>{(language === 'FR') ? 'Bio' : 'About'}</Link>
-                        <Link className="footerNavItem" to={'/contact'}>Contact</Link>
+                        <Link className="footerNavItem" to={(language === 'FR') ? '/' : '/en'}>Home</Link>
+                        <Link className="footerNavItem" to={(language === 'FR') ? '/portfolio' : '/en/portfolio'}>Portfolio</Link>
+                        <Link className="footerNavItem" to={(language === 'FR') ? '/about' : '/en/about'}>{(language === 'FR') ? 'Bio' : 'About'}</Link>
+                        <Link className="footerNavItem" to={(language === 'FR') ? '/contact' : '/en/contact'}>Contact</Link>
                     </nav>
                 </div>
             </div>

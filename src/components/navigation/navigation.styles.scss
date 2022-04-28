@@ -11,6 +11,9 @@
         .langSwitch {
             display: flex;
             align-items: center;
+            .langNav {
+                text-decoration: none;
+            }
             h6 {
                 color: white;
                 margin: 0 4px;
