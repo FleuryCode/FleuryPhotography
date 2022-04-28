@@ -3,8 +3,6 @@ import './imagePortfolio.styles.scss';
 import { FoodImages, BeverageImages, ProductImages } from "../../assets/portfolioImages/ImageArrays";
 import { useLocation } from "react-router-dom";
 // Redux
-import { connect } from "react-redux";
-import { setLanguage } from "../../redux/language/language.actions";
 
 const ImagePortfolio = () => {
     const location = useLocation().pathname;
@@ -38,7 +36,7 @@ const ImagePortfolio = () => {
                     images.map((image, index) => (
                         <div key={index} className="col-12 col-lg-4">
                             <div className="portfolioImageContainer">
-                                <img src={image} alt='' />
+                                <img src={image} alt={`${[keys[index]]}`} />
                             </div>
                         </div>
                     ))
