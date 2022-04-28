@@ -1,8 +1,9 @@
 import React, { useEffect, useState } from "react";
 import './specificPortfolio.styles.scss';
 import { useLocation } from "react-router-dom";
-import ImagePortfolio from "../../components/portfolioViewer/imagePortfolio.component";
+import ImagePortfolio from "../../components/imagePortfolio/imagePortfolio.component";
 import VideoPortfolio from "../../components/videoPortfolio/videoPortfolio.component";
+import Footer from "../../components/footer/footer.component";
 // Header Images
 import FoodHeader from '../../assets/headers/foodPortfolioHeader.jpg';
 import BeverageHeader from '../../assets/headers/beveragePortfolioHeader.jpg';
@@ -71,6 +72,11 @@ const SpecificPortfolioPage = ({ language, setLanguage }) => {
                             :
                             <ImagePortfolio />
                     }
+                </div>
+            </div>
+            <div className="row">
+                <div className="col-12">
+                    <Footer />
                 </div>
             </div>
         </div>
