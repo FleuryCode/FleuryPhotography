@@ -8,6 +8,8 @@ const Homepage = ({ language }) => {
     let imageIndex = 0;
     let endAnim = true;
 
+    
+
     useEffect(() => {
         // Resetting Classes
         const foodActive = document.querySelector('.hero1');

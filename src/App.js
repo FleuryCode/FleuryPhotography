@@ -10,6 +10,13 @@ import PortfolioPage from './pages/portfolio/portfolio.page';
 import SpecificPortfolioPage from './pages/specificPortfolio/specificPortfolio.page';
 
 const App = () => {
+  /* This Works to Load While Page is Loading. Need to Play Around with it though. */
+//   <Route path='/' element={
+//     <Suspense fallback={<div>Loading....</div>}>
+//     <HomePageComp />
+//   </Suspense>
+// } />
+//   const HomePageComp = React.lazy(() => import('./pages/homePage/homePage.page'));
   return (
     <div className="App">
       <Navigation />
