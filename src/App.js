@@ -22,23 +22,16 @@ const App = ({ language }) => {
   return (
     <div className="App">
       <Navigation />
-
-      {
-        (language === 'FR') ?
-          <Routes>
-            <Route path='/' element={<Homepage />} />
-            <Route path='/about' element={<AboutPage />} />
-            <Route path='/contact' element={<ContactPage />} />
-            <Route path='/portfolio' element={<PortfolioPage />} />
-          </Routes>
-          :
-          <Routes>
-            <Route path='/en' element={<Homepage />} />
-            <Route path='/en/about' element={<AboutPage />} />
-            <Route path='/en/contact' element={<ContactPage />} />
-            <Route path='/en/portfolio' element={<PortfolioPage />} />
-          </Routes>
-      }
+      <Routes>
+        <Route path='/' element={<Homepage />} />
+        <Route path='/about' element={<AboutPage />} />
+        <Route path='/contact' element={<ContactPage />} />
+        <Route path='/portfolio' element={<PortfolioPage />} />
+        <Route path='/en' element={<Homepage />} />
+        <Route path='/en/about' element={<AboutPage />} />
+        <Route path='/en/contact' element={<ContactPage />} />
+        <Route path='/en/portfolio' element={<PortfolioPage />} />
+      </Routes>
     </div>
   );
 }

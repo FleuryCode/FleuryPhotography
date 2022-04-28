@@ -40,7 +40,7 @@ const Navigation = ({ language, setLanguage }) => {
                             </Link>
                         </div>
                         :
-                        <Link to={(location === 'FR') ? '/' : '/en'}>
+                        <Link to={(language === 'FR') ? '/' : '/en'}>
                             <FleuryLogo />
                         </Link>
                 }

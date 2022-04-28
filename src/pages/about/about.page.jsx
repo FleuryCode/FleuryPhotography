@@ -1,14 +1,24 @@
-import React from "react";
+import React, { useEffect } from "react";
 import './about.styles.scss';
 import FooterComponent from "../../components/footer/footer.component";
 import AboutHeader from '../../assets/headers/aboutHeader.png';
 import JFleuryProfile from '../../assets/jfleuryProfile.jpg';
 import YouTube from "react-youtube";
+import { useLocation } from "react-router-dom";
 // Redux
 import { connect } from "react-redux";
+import { setLanguage } from "../../redux/language/language.actions";
 
 
-const AboutPage = ({ language }) => {
+const AboutPage = ({ language, setLanguage }) => {
+    const location = useLocation().pathname;
+    useEffect(() => {
+        if (language === 'FR') {
+            if (location === '/en/about') {
+                setLanguage('EN');
+            };
+        }
+    }, []);
 
     const videoOpts = {
         height: '700px',
@@ -88,4 +98,8 @@ const mapStateToProps = (state) => ({
     language: state.language.language
 });
 
-export default connect(mapStateToProps)(AboutPage);
+const mapDispatchToProps = (dispatch) => ({
+    setLanguage: lang => dispatch(setLanguage(lang))
+});
+
+export default connect(mapStateToProps, mapDispatchToProps)(AboutPage);

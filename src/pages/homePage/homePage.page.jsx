@@ -1,14 +1,22 @@
 import React, { useEffect } from "react";
 import './homePage.styles.scss';
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 // Redux
 import { connect } from "react-redux";
+import { setLanguage } from "../../redux/language/language.actions";
 
-const Homepage = ({ language }) => {
+const Homepage = ({ language, setLanguage }) => {
     let imageIndex = 0;
     let endAnim = true;
 
-    
+    const location = useLocation().pathname;
+    useEffect(() => {
+        if (language === 'FR') {
+            if (location === '/en') {
+                setLanguage('EN');
+            };
+        }
+    }, []);
 
     useEffect(() => {
         // Resetting Classes
@@ -124,5 +132,8 @@ const Homepage = ({ language }) => {
 const mapStateToProps = (state) => ({
     language: state.language.language
 });
+const mapDispatchToProps = (dispatch) => ({
+    setLanguage: lang => dispatch(setLanguage(lang))
+});
 
-export default connect(mapStateToProps)(Homepage);
+export default connect(mapStateToProps, mapDispatchToProps)(Homepage);

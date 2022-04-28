@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import './contact.styles.scss';
 import ContactHeader from '../../assets/headers/contactHeader.png';
 import CustomInput from '../../components/customInput/customInput.component';
@@ -7,12 +7,23 @@ import CustomButton from '../../components/customButton/customButton.component';
 import Footer from "../../components/footer/footer.component";
 import { KEYS } from "../../Keys";
 import axios from "axios";
+import { useLocation } from "react-router-dom";
 // RECAPTHCA
 import ReCAPTCHA from "react-google-recaptcha";
 // Redux
 import { connect } from "react-redux";
+import { setLanguage } from "../../redux/language/language.actions";
 
-const ContactPage = ({ language }) => {
+const ContactPage = ({ language, setLanguage }) => {
+    const location = useLocation().pathname;
+    useEffect(() => {
+        if (language === 'FR') {
+            if (location === '/en/contact') {
+                setLanguage('EN');
+            };
+        }
+    }, []);
+
     const [firstName, setFirstName] = useState('');
     const [lastName, setLastName] = useState('');
     const [email, setEmail] = useState('');
@@ -129,7 +140,7 @@ const ContactPage = ({ language }) => {
                     <label htmlFor="message">Message</label>
                 </div>
                 <div className="col-12 d-flex justify-content-center">
-                    <h5 className={ `${messageSent ? 'd-flex' : 'd-none'} displayMessage`} >{displayMessage}</h5>
+                    <h5 className={`${messageSent ? 'd-flex' : 'd-none'} displayMessage`} >{displayMessage}</h5>
                 </div>
                 <div className="col-12 col-sm-6 col-md-8 mb-3">
                     <ReCAPTCHA size="compact" theme="light" ref={recaptchaRef} sitekey={recaptchaKey} onChange={updateRecaptcha} />
@@ -150,5 +161,8 @@ const ContactPage = ({ language }) => {
 const mapStateToProps = (state) => ({
     language: state.language.language
 });
+const mapDispatchToProps = (dispatch) => ({
+    setLanguage: lang => dispatch(setLanguage(lang))
+});
 
-export default connect(mapStateToProps)(ContactPage);
+export default connect(mapStateToProps, mapDispatchToProps)(ContactPage);
