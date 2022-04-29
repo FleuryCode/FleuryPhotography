@@ -13,6 +13,7 @@ import SpecificPortfolioPage from './pages/specificPortfolio/specificPortfolio.p
 import { connect } from 'react-redux';
 
 const App = ({ language }) => {
+
   /* This Works to Load While Page is Loading. Need to Play Around with it though. */
   //   <Route path='/' element={
   //     <Suspense fallback={<div>Loading....</div>}>
