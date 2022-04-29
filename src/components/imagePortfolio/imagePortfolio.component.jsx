@@ -24,10 +24,14 @@ const ImagePortfolio = () => {
     }
 
     // Sorting ImageObjects
-    let keys = Object.keys(imageFolder);
-    keys.forEach((key) => {
-        images.push(imageFolder[key]);
-    });
+    let keys = null;
+    if (imageFolder !== null) {
+        keys = Object.keys(imageFolder);
+        keys.forEach((key) => {
+            images.push(imageFolder[key]);
+        });
+    }
+
 
     return (
         <div className="imagePortfolioContainer container-fluid">
