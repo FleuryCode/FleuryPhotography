@@ -2,10 +2,14 @@ import React, { useState, useEffect } from "react";
 import './imagePortfolio.styles.scss';
 import { FoodImages, BeverageImages, ProductImages } from "../../assets/portfolioImages/ImageArrays";
 import { useLocation } from "react-router-dom";
+import ShadowBox from "../shadowBox/shadowBox.component";
 // Redux
 
 const ImagePortfolio = () => {
     const location = useLocation().pathname;
+    const [shadowBox, setShadowBox] = useState(false);
+    const [activeImage, setActiveImage] = useState('');
+    const [activeAlt, setActiveAlt] = useState('');
     let images = [];
     let imageFolder = null;
 
@@ -32,14 +36,26 @@ const ImagePortfolio = () => {
         });
     }
 
+    // Think we need to pass this through from portfolioPage
+    const imageClickHandle = (image, alt) => {
+        setActiveImage(image);
+        setActiveAlt(alt);
+        setShadowBox(true);
+    };
+
 
     return (
         <div className="imagePortfolioContainer container-fluid">
+            <div className={`${shadowBox ? 'row' : 'd-none'}`}>
+                <div className="col-12">
+                    <ShadowBox image={activeImage} altText={activeAlt} />
+                </div>
+            </div>
             <div className="row">
                 {
                     images.map((image, index) => (
                         <div key={index} className="col-12 col-lg-4">
-                            <div className="portfolioImageContainer">
+                            <div onClick={() => imageClickHandle(image, keys[index])} className="portfolioImageContainer">
                                 <img src={image} alt={`${[keys[index]]}`} />
                             </div>
                         </div>
