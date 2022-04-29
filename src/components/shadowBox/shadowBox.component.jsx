@@ -1,9 +1,9 @@
 import React from "react";
 import './shadowBox.styles.scss';
 
-const ShadowBox = ({ image, altText }) => {
+const ShadowBox = ({ image, altText, setShadowBox }) => {
     return (
-        <div className="shadowBoxContainer">
+        <div onClick={() => setShadowBox(false)} className="shadowBoxContainer">
             <img src={image} alt={altText} />
         </div>
     );

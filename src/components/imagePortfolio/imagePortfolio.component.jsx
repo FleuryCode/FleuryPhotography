@@ -36,19 +36,17 @@ const ImagePortfolio = () => {
         });
     }
 
-    // Think we need to pass this through from portfolioPage
     const imageClickHandle = (image, alt) => {
         setActiveImage(image);
         setActiveAlt(alt);
         setShadowBox(true);
     };
 
-
     return (
         <div className="imagePortfolioContainer container-fluid">
             <div className={`${shadowBox ? 'row' : 'd-none'}`}>
                 <div className="col-12">
-                    <ShadowBox image={activeImage} altText={activeAlt} />
+                    <ShadowBox image={activeImage} altText={activeAlt} setShadowBox={setShadowBox} />
                 </div>
             </div>
             <div className="row">
