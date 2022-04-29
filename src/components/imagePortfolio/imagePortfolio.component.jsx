@@ -15,12 +15,6 @@ const ImagePortfolio = () => {
     let images = [];
     let imageFolder = null;
 
-    if(pageLoading) {
-        document.body.style.overflow = 'hidden';
-    }else {
-        document.body.style.overflow = 'visible';
-    }
-
     switch (true) {
         case (location.includes('food')):
             imageFolder = FoodImages;
@@ -59,7 +53,7 @@ const ImagePortfolio = () => {
     }
 
     return (
-        <div className="imagePortfolioContainer container-fluid">
+        <div className={`imagePortfolioContainer container-fluid`}>
             {
                 pageLoading ?
                     <div className="row">
