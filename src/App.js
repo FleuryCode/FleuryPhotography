@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { Suspense } from 'react';
 import './App.css';
 import { Routes, Route } from 'react-router-dom';
 import Navigation from './components/navigation/navigation.component';
@@ -8,6 +8,7 @@ import AboutPage from './pages/about/about.page';
 import ContactPage from './pages/contact/contact.page';
 import PortfolioPage from './pages/portfolio/portfolio.page';
 import SpecificPortfolioPage from './pages/specificPortfolio/specificPortfolio.page';
+
 // Redux
 import { connect } from 'react-redux';
 
@@ -18,7 +19,7 @@ const App = ({ language }) => {
   //     <HomePageComp />
   //   </Suspense>
   // } />
-  //   const HomePageComp = React.lazy(() => import('./pages/homePage/homePage.page'));
+  // const HomePage = React.lazy(() => import('./pages/homePage/homePage.page'));
   return (
     <div className="App">
       <Navigation />

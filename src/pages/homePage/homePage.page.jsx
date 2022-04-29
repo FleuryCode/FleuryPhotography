@@ -85,9 +85,6 @@ const Homepage = ({ language, setLanguage }) => {
         }
     }
 
-
-
-
     return (
         <div onWheel={(e) => scrollEventHandler(e)} className="homepageContainer">
             <div className={`homeFoodContainer hero1 justify-content-start justify-content-md-end active`}>

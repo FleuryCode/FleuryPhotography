@@ -8,6 +8,7 @@ import Footer from "../../components/footer/footer.component";
 import { KEYS } from "../../Keys";
 import axios from "axios";
 import { useLocation } from "react-router-dom";
+import SkeletonElement from "../../components/skeletonElement/skeletonElement.component";
 // RECAPTHCA
 import ReCAPTCHA from "react-google-recaptcha";
 // Redux
