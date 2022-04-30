@@ -1,10 +1,11 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState, useRef } from "react";
 import './about.styles.scss';
 import FooterComponent from "../../components/footer/footer.component";
 import AboutHeader from '../../assets/headers/aboutHeader.png';
 import JFleuryProfile from '../../assets/jfleuryProfile.jpg';
 import YouTube from "react-youtube";
 import { useLocation } from "react-router-dom";
+import SkeletonAbout from "../../components/skeletonAbout/skeletonAbout.component";
 // Redux
 import { connect } from "react-redux";
 import { setLanguage } from "../../redux/language/language.actions";
@@ -12,6 +13,8 @@ import { setLanguage } from "../../redux/language/language.actions";
 
 const AboutPage = ({ language, setLanguage }) => {
     const location = useLocation().pathname;
+    const [pageLoading, setPageLoading] = useState(true);
+    const counter = useRef(0);
     useEffect(() => {
         if (language === 'FR') {
             if (location === '/en/about') {
@@ -28,11 +31,27 @@ const AboutPage = ({ language, setLanguage }) => {
             modestbranding: 1,
         },
     };
+
+    // Waiting for images to Load on Page
+    const onImageLoad = () => {
+        counter.current += 1;
+        if (counter.current >= 2) {
+            setPageLoading(false);
+        };
+    };
     return (
         <div className="aboutPageContainer container-fluid">
+            {
+                pageLoading ?
+                <div className="aboutSkeleton">
+                    <SkeletonAbout />
+                </div>
+                :
+                <div></div>
+            }
             <div className="row">
                 <div className="col-12 aboutImageContainer">
-                    <img src={AboutHeader} alt="" />
+                    <img onLoad={() => onImageLoad()} src={AboutHeader} alt="" />
                 </div>
             </div>
             <div className="row">
@@ -48,7 +67,7 @@ const AboutPage = ({ language, setLanguage }) => {
                 </div>
                 <div className="col-12 col-md-4">
                     <div className="profilePictureContainer">
-                        <img src={JFleuryProfile} alt="" />
+                        <img onLoad={() => onImageLoad()} src={JFleuryProfile} alt="" />
                     </div>
                 </div>
                 <div className="col-12 col-md-6">

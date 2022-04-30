@@ -38,7 +38,6 @@ const PortfolioPage = ({ language, setLanguage }) => {
                     :
                     <div></div>
             }
-
             <div className="row">
                 <div className="col-12 portfolioImageContainer">
                     <img onLoad={() => onImageLoad()} src={PortfolioHeader} alt="Portfolio header featuring fruit and wine" />
