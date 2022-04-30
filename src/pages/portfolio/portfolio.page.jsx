@@ -18,6 +18,14 @@ const PortfolioPage = ({ language, setLanguage }) => {
             };
         }
     }, []);
+
+    // Waiting for images to Load on Page
+    const onImageLoad = () => {
+        counter.current += 1;
+        if (counter.current >= 1) {
+            setPageLoading(false);
+        };
+    };
     return (
         <div className="portfolioPageContainer container-fluid">
             {
@@ -33,7 +41,7 @@ const PortfolioPage = ({ language, setLanguage }) => {
 
             <div className="row">
                 <div className="col-12 portfolioImageContainer">
-                    <img src={PortfolioHeader} alt="Portfolio header featuring fruit and wine" />
+                    <img onLoad={() => onImageLoad()} src={PortfolioHeader} alt="Portfolio header featuring fruit and wine" />
                 </div>
             </div>
             <div className="row">
