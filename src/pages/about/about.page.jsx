@@ -23,6 +23,17 @@ const AboutPage = ({ language, setLanguage }) => {
         }
     }, []);
 
+    // SEO Data
+    useEffect(() => {
+        if(language === 'FR') {
+            document.title = 'À Propos De Fleury Photography | Photographe Commercial International';
+            document.querySelector('meta[name="description"]').setAttribute("content", `A propos de Julien Fleury, le photographe de Fleury photography. Spécialisé dans la photographie culinaire, de boissons et de produits. Basé à Nice, France. La photographie culinaire artistique est sa spécialité, travaillant avec des restaurants et des entreprises pour mieux présenter leurs produits de manière créative.`);
+        } else {
+            document.title = 'About Us | Food Photographer Nice France';
+            document.querySelector('meta[name="description"]').setAttribute("content", `About Julien Fleury, the photographer of Fleury photography. Specializing in food, beverage and product photography. Based out of Nice, France. Creative lifestyle photography usually focused around food photography is his specialty.`);
+        }
+    }, [language]);
+
     const videoOpts = {
         height: '700px',
         width: '100%',

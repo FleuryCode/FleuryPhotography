@@ -17,6 +17,17 @@ const Homepage = ({ language, setLanguage }) => {
     let imageIndex = 0;
     let endAnim = true;
 
+     // SEO Data
+     useEffect(() => {
+        if(language === 'FR') {
+            document.title = 'Photographe Culinaire & Produits Commercial | Nice France';
+            document.querySelector('meta[name="description"]').setAttribute("content", `Fleury Photography est un photographe et vidéaste culinaire international basé à Nice, France. Spécialisé dans la photographie culinaire, boissons et produits. Avez-vous besoin de photos culinaires pour votre restaurant ? N'hésitez pas à nous contactez.`);
+        } else {
+            document.title = 'Commercial Food & Product Photographer | Nice France';
+            document.querySelector('meta[name="description"]').setAttribute("content", `Fleury Photography is an international food photographer and videographer based out of Nice, France. Specializing in food, beverage and product photography. Need creative lifestyle product photography? Feel free to contact us.`);
+        }
+    }, [language]);
+
     const location = useLocation().pathname;
     useEffect(() => {
         if (language === 'FR') {

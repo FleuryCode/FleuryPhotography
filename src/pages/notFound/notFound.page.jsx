@@ -1,8 +1,12 @@
-import React from "react";
+import React, { useEffect } from "react";
 import './notFound.styles.scss';
 import ErrorImage from '../../assets/errorImage.png';
 
-const NotFound = () => {
+const NotFound = () => { // SEO Data
+    useEffect(() => {
+        document.title = '404 | Page Not Found';
+        document.querySelector('meta[name="description"]').setAttribute("content", `404 Error. Page Not Found`);
+    }, []);
     return (
         <main className="notFoundContainer container-fluid">
             <div className="row">

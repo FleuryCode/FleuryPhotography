@@ -25,6 +25,17 @@ const ContactPage = ({ language, setLanguage }) => {
         }
     }, []);
 
+    // SEO Data
+    useEffect(() => {
+        if(language === 'FR') {
+            document.title = 'Contactez-Nous Pour Vos Besoins en Photographie | Demandez un Devis';
+            document.querySelector('meta[name="description"]').setAttribute("content", `Contactez Fleury Photographie à propos de votre prochain projet pour obtenir un devis. Si vous avez besoin de photographies de produits, posez toutes vos questions et nous verrons comment nous pouvons vous aider.`);
+        } else {
+            document.title = 'Contact Us For Your Photography Needs | Get a Quote';
+            document.querySelector('meta[name="description"]').setAttribute("content", `Contact Fleury Photography about your next project to get a quote. If you are in need of product photography, reach out with any questions you have and we will see how we can help you.`);
+        }
+    }, [language]);
+
     const [firstName, setFirstName] = useState('');
     const [lastName, setLastName] = useState('');
     const [email, setEmail] = useState('');

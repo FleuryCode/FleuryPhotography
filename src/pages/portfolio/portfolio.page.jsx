@@ -18,6 +18,16 @@ const PortfolioPage = ({ language, setLanguage }) => {
             };
         }
     }, []);
+     // SEO Data
+     useEffect(() => {
+        if(language === 'FR') {
+            document.title = 'Portfolio | Culinaire, Boissons, Produits & Vidéo';
+            document.querySelector('meta[name="description"]').setAttribute("content", `Sections portfolio du travail de Fleury Photography. Les sections comprennent culinaire, les boissons, les produits et la vidéo. Nous spécialisons dans la photographie culinaire pour les restaurants haut de gamme, la photographie de bière pour les brasseries, la photographie de produits pour le commerce électronique et la vidéographie.`);
+        } else {
+            document.title = 'Portfolio | Food, Beverage, Product Video';
+            document.querySelector('meta[name="description"]').setAttribute("content", `Portfolio sections of Fleury Photography's work. Sections include food, beverage, product and video. We specialize in food photography for high end restaurants, beer photography for breweries, product photography for e-commerce and videography.`);
+        }
+    }, [language]);
 
     // Waiting for images to Load on Page
     const onImageLoad = () => {
