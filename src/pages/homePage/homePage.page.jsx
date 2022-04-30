@@ -1,6 +1,7 @@
 import React, { useEffect, useState, useRef } from "react";
 import './homePage.styles.scss';
 import { Link, useLocation } from "react-router-dom";
+import { useSwipeable } from 'react-swipeable';
 // Main Images
 import FrenchToastImage from '../../assets/heroImages/frenchtoast_main.jpg';
 import FloatingBeerImage from '../../assets/heroImages/floatingbeer_main.jpg';
@@ -77,36 +78,46 @@ const Homepage = ({ language, setLanguage }) => {
         }
     };
 
+    const scrollDown = () => {
+        if (imageIndex === 3) {
+            endAnim = false;
+            imageIndex = 0;
+            const addHeroElement = document.querySelector(`.hero${imageIndex + 1}`);
+            const removeHeroElement = document.querySelector(`.hero4`);
+            addHeroElement.classList.add('active');
+            removeHeroElement.classList.remove('active');
+            setTimeout(() => {
+                endAnim = true;
+            }, 600);
+        } else {
+            endAnim = false;
+            imageIndex++;
+            const addHeroElement = document.querySelector(`.hero${imageIndex + 1}`);
+            const removeHeroElement = document.querySelector(`.hero${imageIndex}`);
+            addHeroElement.classList.add('active');
+            removeHeroElement.classList.remove('active');
+            setTimeout(() => {
+                endAnim = true;
+            }, 600);
+        }
+    };
+
     const scrollEventHandler = (event) => {
         const yDelta = event.deltaY;
         if (endAnim) {
             if (yDelta / 100 < 0) {
                 scrollUp();
             } else {
-                if (imageIndex === 3) {
-                    endAnim = false;
-                    imageIndex = 0;
-                    const addHeroElement = document.querySelector(`.hero${imageIndex + 1}`);
-                    const removeHeroElement = document.querySelector(`.hero4`);
-                    addHeroElement.classList.add('active');
-                    removeHeroElement.classList.remove('active');
-                    setTimeout(() => {
-                        endAnim = true;
-                    }, 600);
-                } else {
-                    endAnim = false;
-                    imageIndex++;
-                    const addHeroElement = document.querySelector(`.hero${imageIndex + 1}`);
-                    const removeHeroElement = document.querySelector(`.hero${imageIndex}`);
-                    addHeroElement.classList.add('active');
-                    removeHeroElement.classList.remove('active');
-                    setTimeout(() => {
-                        endAnim = true;
-                    }, 600);
-                }
+                scrollDown();
             }
         }
-    }
+    };
+
+    // Swipe Events
+    const handlers = useSwipeable({
+        onSwipedUp: () => scrollDown(),
+        onSwipedDown: () => scrollUp()
+    });
 
     // Waiting for images to Load on Page
     const onImageLoad = () => {
@@ -117,7 +128,7 @@ const Homepage = ({ language, setLanguage }) => {
     };
 
     return (
-        <header onWheel={(e) => scrollEventHandler(e)} className="homepageContainer">
+        <header {...handlers} onWheel={(e) => scrollEventHandler(e)} className="homepageContainer">
             {
                 pageLoading ?
                     <div className="homePageSkeleton">
