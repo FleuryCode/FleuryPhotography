@@ -111,7 +111,7 @@ const Homepage = ({ language, setLanguage }) => {
                         :
                         <div></div>
                 }
-            <div className={`homeFoodContainer hero1 justify-content-start justify-content-md-end active`}>
+            <main className={`homeFoodContainer hero1 justify-content-start justify-content-md-end active`}>
                 <div className="homeImageContainer">
                     <img onLoad={() => onImageLoad()} src={FrenchToastImage} alt="French toast food photography by Fleury Photography" />
                 </div>
@@ -120,7 +120,7 @@ const Homepage = ({ language, setLanguage }) => {
                     <h2>{(language === 'FR') ? "De bonnes photos de nourriture évoquent l'émotion. De superbes photos conduisent à l'action ; les gens visitent les restaurants, achètent des dîners préparés en ligne ou essaient des recettes qu'ils n'auraient pas autrement. Besoin de photos pour le site Web de votre restaurant, votre magazine culinaire ou votre blog ? Contactez-nous." : 'Good photos of food evoke emotion. Great photos drive action; people visit restaurants, buy prepared dinners online, or try recipes they wouldn’t otherwise. Need photos for your restaurant website, culinary magazine, or blog? Contact us.'}</h2>
                     <Link className="viewPortfolioButton" to={'/portfolio'}>{(language === 'FR') ? "Voir le Portfolio" : "View Portfolio"}</Link>
                 </div>
-            </div>
+            </main>
             <div className="homeBeverageContainer hero2 justify-content-start justify-content-md-end">
                 <div className="homeImageContainer">
                     <img onLoad={() => onImageLoad()} src={FloatingBeerImage} alt="Floating beer, beverage photography by Julien Fleury" />

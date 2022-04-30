@@ -134,12 +134,12 @@ const ContactPage = ({ language, setLanguage }) => {
                     <img onLoad={() => onImageLoad()} src={ContactHeader} alt="Contact header featuring coffee and cake" />
                 </div>
             </div>
-            <div className="row">
+            <header className="row">
                 <div className="col-12 contactTitleContainer">
                     <h1>{(language === 'FR') ? "Demandez un devis pour votre prochain project" : "Contact Us"}</h1>
                 </div>
-            </div>
-            <div className="row mt-4 px-4 contactFormContainer">
+            </header>
+            <main className="row mt-4 px-4 contactFormContainer">
                 <div className="col-12 col-md-6 mb-4">
                     <CustomInput specificClass={'contactPage'} id={'firstName'} name={'firstName'} value={firstName} placeholder={'John'} onChangeHandle={inputChangeHandle} />
                     <label htmlFor="firstName">{(language === 'FR') ? "Prénom" : "First Name"}</label>
@@ -169,7 +169,7 @@ const ContactPage = ({ language, setLanguage }) => {
                 <div className="col-8 col-sm-4 col-md-2 ms-auto me-auto me-md-0 mb-3">
                     <CustomButton text={(language === 'FR') ? 'Envoyer' : 'Send'} specificClass={'contactButton'} asyncHandle={messageSending} onClickHandle={messageSendButtonClick} />
                 </div>
-            </div>
+            </main>
             <div className="row">
                 <div className="col-12">
                     <Footer />

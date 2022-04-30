@@ -53,7 +53,7 @@ const SpecificPortfolioPage = ({ language, setLanguage }) => {
     }, [location, language]);
 
     return (
-        <div className="specificPortfolioPageContainer container-fluid">
+        <main className="specificPortfolioPageContainer container-fluid">
             <div className="row">
                 <div className="col-12 specificImageContainer">
                     <img src={headerImage} alt={`Header for ${portfolio} portfolio`} />
@@ -79,7 +79,7 @@ const SpecificPortfolioPage = ({ language, setLanguage }) => {
                     <Footer />
                 </div>
             </div>
-        </div>
+        </main>
     );
 }
 

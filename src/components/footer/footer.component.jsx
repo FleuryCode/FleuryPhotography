@@ -6,7 +6,7 @@ import { connect } from "react-redux";
 
 const Footer = ({ language }) => {
     return (
-        <div className="footerContainer container-fluid">
+        <footer className="footerContainer container-fluid">
             <div className="row">
                 <div className="col-12">
                     <nav className="footerNav">
@@ -22,7 +22,7 @@ const Footer = ({ language }) => {
                     <p>&copy; Copyright Fleury Photography 2022</p>
                 </div>
             </div>
-        </div>
+        </footer>
     );
 }
 

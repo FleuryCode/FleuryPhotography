@@ -38,17 +38,17 @@ const PortfolioPage = ({ language, setLanguage }) => {
                     :
                     <div></div>
             }
-            <div className="row">
+            <header className="row">
                 <div className="col-12 portfolioImageContainer">
                     <img onLoad={() => onImageLoad()} src={PortfolioHeader} alt="Portfolio header featuring fruit and wine" />
                 </div>
-            </div>
+            </header>
             <div className="row">
                 <div className="col-12 portfolioTitleContainer">
                     <h1>Portfolios</h1>
                 </div>
             </div>
-            <div className="row portfolioSelectors">
+            <main className="row portfolioSelectors">
                 <div className="col-12 col-lg-3">
                     <Link to={(language === 'FR') ? '/portfolio/food' : '/en/portfolio/food'} className="portfolioSelectorContainer foodSelector">
                         <h2>{(language === 'FR') ? 'Culinaire' : 'Food'}</h2>
@@ -69,7 +69,7 @@ const PortfolioPage = ({ language, setLanguage }) => {
                         <h2>{(language === 'FR') ? 'Vidéo' : 'Video'}</h2>
                     </Link>
                 </div>
-            </div>
+            </main>
         </div>
     );
 }

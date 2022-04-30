@@ -4,7 +4,7 @@ import ErrorImage from '../../assets/errorImage.png';
 
 const NotFound = () => {
     return (
-        <div className="notFoundContainer container-fluid">
+        <main className="notFoundContainer container-fluid">
             <div className="row">
                 <div className="col-12">
                     <h1 className="text-center">Error 404</h1>
@@ -20,7 +20,7 @@ const NotFound = () => {
                     </div>
                 </div>
             </div>
-        </div>
+        </main>
     );
 }
 

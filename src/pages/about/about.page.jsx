@@ -49,17 +49,17 @@ const AboutPage = ({ language, setLanguage }) => {
                 :
                 <div></div>
             }
-            <div className="row">
+            <header className="row">
                 <div className="col-12 aboutImageContainer">
                     <img onLoad={() => onImageLoad()} src={AboutHeader} alt="" />
                 </div>
-            </div>
+            </header>
             <div className="row">
                 <div className="col-12 aboutTitleContainer">
                     <h1>{(language === 'FR') ? "Bio" : "About"}</h1>
                 </div>
             </div>
-            <div className="row">
+            <main className="row">
                 <div className="col-12 col-md-8 aboutTextContainer p-4 p-md-3">
                     <h4>{(language === 'FR') ? "Julien Fleury est un photographe et vidéaste qui travaille à la fois à Nice, France, à Paris, France et à Austin, Texas. Spécialisé dans la photographie alimentaire commerciale pour les restaurants, la photographie de boissons pour les brasseries et la photographie de produits pour les entreprises essayant de présenter leurs produits de manière créative" : "Julien Fleury is a photographer and videographer working out of both Nice, France. Specializing in commercial food photography for restaurants, beverage photography for breweries and product photography for companies trying to showcase their products in a creative way."}</h4>
                     <br /><br />
@@ -98,7 +98,7 @@ const AboutPage = ({ language, setLanguage }) => {
                         </div>
                     </div>
                 </div>
-            </div>
+            </main>
             <div className="row">
                 <div className="col-12 p-3">
                     <YouTube className="videoContainer" videoId="qJl6OHd0sUM" opts={videoOpts} />
