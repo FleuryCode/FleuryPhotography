@@ -8,9 +8,10 @@ import AboutPage from './pages/about/about.page';
 import ContactPage from './pages/contact/contact.page';
 import PortfolioPage from './pages/portfolio/portfolio.page';
 import SpecificPortfolioPage from './pages/specificPortfolio/specificPortfolio.page';
-
+import NotFound from './pages/notFound/notFound.page';
 // Redux
 import { connect } from 'react-redux';
+
 
 const App = ({ language }) => {
 
@@ -35,6 +36,7 @@ const App = ({ language }) => {
         <Route path='/en/contact' element={<ContactPage />} />
         <Route path='/en/portfolio' element={<PortfolioPage />} />
         <Route path='/en/portfolio/:specificPortfolio' element={<SpecificPortfolioPage />} />
+        <Route path='*' element={<NotFound />} />
       </Routes>
     </div>
   );
