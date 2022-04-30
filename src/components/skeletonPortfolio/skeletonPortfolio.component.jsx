@@ -43,6 +43,15 @@ const SkeletonPortfolio = () => {
                 <div className="col-12 col-md-4">
                     <SkeletonElement specificClass={'skeletonSquare'} />
                 </div>
+                <div className="col-12 col-md-4">
+                    <SkeletonElement specificClass={'skeletonSquare'} />
+                </div>
+                <div className="col-12 col-md-4">
+                    <SkeletonElement specificClass={'skeletonSquare'} />
+                </div>
+                <div className="col-12 col-md-4">
+                    <SkeletonElement specificClass={'skeletonSquare'} />
+                </div>
             </div>
         </div>
     );
