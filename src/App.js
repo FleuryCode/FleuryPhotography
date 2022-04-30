@@ -14,14 +14,6 @@ import { connect } from 'react-redux';
 
 
 const App = ({ language }) => {
-
-  /* This Works to Load While Page is Loading. Need to Play Around with it though. */
-  //   <Route path='/' element={
-  //     <Suspense fallback={<div>Loading....</div>}>
-  //     <HomePageComp />
-  //   </Suspense>
-  // } />
-  // const HomePage = React.lazy(() => import('./pages/homePage/homePage.page'));
   return (
     <div className="App">
       <Navigation />
