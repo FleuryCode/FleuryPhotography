@@ -2,6 +2,18 @@
     width: 100%;
     padding: 0;
     padding-bottom: 2%;
+    .skeletonContact {
+        z-index: 500;
+        width: 100vw;
+        height: 100vh;
+        position: fixed;
+        top: 0;
+        left: 0;
+        background-color: #E0E0E0;
+        display: flex;
+        justify-content: center;
+        overflow: hidden;
+    }
 
     .contactImageContainer {
         width: 100%;

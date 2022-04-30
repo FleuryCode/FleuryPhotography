@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import './contact.styles.scss';
 import ContactHeader from '../../assets/headers/contactHeader.png';
 import CustomInput from '../../components/customInput/customInput.component';
@@ -8,7 +8,7 @@ import Footer from "../../components/footer/footer.component";
 import { KEYS } from "../../Keys";
 import axios from "axios";
 import { useLocation } from "react-router-dom";
-import SkeletonElement from "../../components/skeletonElement/skeletonElement.component";
+import SkeletonContact from "../../components/skeletonContact/skeletonContact.component";
 // RECAPTHCA
 import ReCAPTCHA from "react-google-recaptcha";
 // Redux
@@ -34,6 +34,8 @@ const ContactPage = ({ language, setLanguage }) => {
     const [messageSending, setMessageSending] = useState(false);
     const [messageSent, setMessageSent] = useState(false);
     const [displayMessage, setDisplayMessage] = useState('');
+    const [pageLoading, setPageLoading] = useState(true);
+    const counter = useRef(0);
 
     // ReCAPTCHA
     const recaptchaRef = React.useRef();
@@ -107,11 +109,29 @@ const ContactPage = ({ language, setLanguage }) => {
                 break;
         };
     };
+
+    // Waiting for images to Load on Page
+    const onImageLoad = () => {
+        counter.current += 1;
+        if (counter.current >= 1) {
+            setPageLoading(false);
+        };
+    };
     return (
         <div className="contactPageContainer container-fluid">
+            {
+                pageLoading ?
+                <div className="row">
+                    <div className="col-12 skeletonContact">
+                        <SkeletonContact />
+                    </div>
+                </div>
+                :
+                <div></div>
+            }
             <div className="row">
                 <div className="col-12 contactImageContainer">
-                    <img src={ContactHeader} alt="Contact header featuring coffee and cake" />
+                    <img onLoad={() => onImageLoad()} src={ContactHeader} alt="Contact header featuring coffee and cake" />
                 </div>
             </div>
             <div className="row">
