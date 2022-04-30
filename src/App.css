@@ -1,8 +1,13 @@
 .App {
   background-color: #E0E0E0;
   min-height: 100vh;
+  font-family: 'Vazirmatn', sans-serif;
 }
 
 .row {
   margin: 0;
+}
+
+p {
+  font-family: 'Rokkitt', serif;
 }
