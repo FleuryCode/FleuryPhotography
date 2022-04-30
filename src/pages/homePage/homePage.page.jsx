@@ -9,6 +9,7 @@ import BeerSplashImage from '../../assets/heroImages/beersplash_main.jpg';
 // Redux
 import { connect } from "react-redux";
 import { setLanguage } from "../../redux/language/language.actions";
+import HomeLoading from "../../components/homeLoading/homeLoading.component";
 
 const Homepage = ({ language, setLanguage }) => {
     const [pageLoading, setPageLoading] = useState(true);
@@ -92,20 +93,27 @@ const Homepage = ({ language, setLanguage }) => {
         }
     }
 
+    // Waiting for images to Load on Page
+    const onImageLoad = () => {
+        counter.current += 1;
+        if (counter.current >= 4) {
+            setPageLoading(false);
+        };
+    };
+
     return (
-        <div onWheel={(e) => scrollEventHandler(e)} className="homepageContainer">
-            <div className={`homeFoodContainer hero1 justify-content-start justify-content-md-end active`}>
-                {
+        <header onWheel={(e) => scrollEventHandler(e)} className="homepageContainer">
+            {
                     pageLoading ?
                         <div className="homePageSkeleton">
-
+                            <HomeLoading />
                         </div>
                         :
                         <div></div>
                 }
-
+            <div className={`homeFoodContainer hero1 justify-content-start justify-content-md-end active`}>
                 <div className="homeImageContainer">
-                    <img src={FrenchToastImage} alt="" />
+                    <img onLoad={() => onImageLoad()} src={FrenchToastImage} alt="French toast food photography by Fleury Photography" />
                 </div>
                 <div className="homeTextInfo">
                     <h1>{(language === 'FR') ? "CULINAIRE" : "FOOD"}</h1>
@@ -115,7 +123,7 @@ const Homepage = ({ language, setLanguage }) => {
             </div>
             <div className="homeBeverageContainer hero2 justify-content-start justify-content-md-end">
                 <div className="homeImageContainer">
-                    <img src={FloatingBeerImage} alt="" />
+                    <img onLoad={() => onImageLoad()} src={FloatingBeerImage} alt="Floating beer, beverage photography by Julien Fleury" />
                 </div>
                 <div className="homeTextInfo">
                     <h1>{(language === 'FR') ? "BOISSON" : "BEVERAGE"}</h1>
@@ -125,7 +133,7 @@ const Homepage = ({ language, setLanguage }) => {
             </div>
             <div className="homeProductContainer hero3 justify-content-start justify-content-md-end">
                 <div className="homeImageContainer">
-                    <img src={ElianaBowlImage} alt="" />
+                    <img onLoad={() => onImageLoad()} src={ElianaBowlImage} alt="Product photography of a ceramic bowl" />
                 </div>
                 <div className="homeTextInfo">
                     <h1>{(language === 'FR') ? "PRODUIT" : "PRODUCT"}</h1>
@@ -135,7 +143,7 @@ const Homepage = ({ language, setLanguage }) => {
             </div>
             <div className="homeVideoContainer hero4 justify-content-start justify-content-md-end">
                 <div className="homeImageContainer">
-                    <img src={BeerSplashImage} alt="" />
+                    <img onLoad={() => onImageLoad()} src={BeerSplashImage} alt="Beer splashing into water" />
                 </div>
                 <div className="homeTextInfo">
                     <h1>{(language === 'FR') ? "VIDÉO" : "VIDEO"}</h1>
@@ -150,7 +158,7 @@ const Homepage = ({ language, setLanguage }) => {
                     </div>
                 </div>
             </div>
-        </div>
+        </header>
     );
 }
 

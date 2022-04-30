@@ -49,8 +49,8 @@ const ImagePortfolio = () => {
         counter.current += 1;
         if (counter.current >= images.length) {
             setPageLoading(false);
-        }
-    }
+        };
+    };
 
     return (
         <div className={`imagePortfolioContainer container-fluid`}>

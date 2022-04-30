@@ -1,13 +1,16 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState, useRef } from "react";
 import './portfolio.styles.scss';
 import { Link, useLocation } from "react-router-dom";
 import PortfolioHeader from '../../assets/headers/portfolioHeader.jpg';
 // Redux
 import { connect } from "react-redux";
 import { setLanguage } from '../../redux/language/language.actions';
+import SkeletonPortfolioPage from "../../components/skeletonPortfolioPage/skeletonPortfolioPage.component";
 
 const PortfolioPage = ({ language, setLanguage }) => {
     const location = useLocation().pathname;
+    const [pageLoading, setPageLoading] = useState(true);
+    const counter = useRef(0);
     useEffect(() => {
         if (language === 'FR') {
             if (location === '/en/portfolio') {
@@ -17,6 +20,17 @@ const PortfolioPage = ({ language, setLanguage }) => {
     }, []);
     return (
         <div className="portfolioPageContainer container-fluid">
+            {
+                pageLoading ?
+                    <div className="row">
+                        <div className="col-12 skeletonPortfolioPage">
+                            <SkeletonPortfolioPage />
+                        </div>
+                    </div>
+                    :
+                    <div></div>
+            }
+
             <div className="row">
                 <div className="col-12 portfolioImageContainer">
                     <img src={PortfolioHeader} alt="Portfolio header featuring fruit and wine" />
