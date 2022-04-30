@@ -17,9 +17,9 @@ const Homepage = ({ language, setLanguage }) => {
     let imageIndex = 0;
     let endAnim = true;
 
-     // SEO Data
-     useEffect(() => {
-        if(language === 'FR') {
+    // SEO Data
+    useEffect(() => {
+        if (language === 'FR') {
             document.title = 'Photographe Culinaire & Produits Commercial | Nice France';
             document.querySelector('meta[name="description"]').setAttribute("content", `Fleury Photography est un photographe et vidéaste culinaire international basé à Nice, France. Spécialisé dans la photographie culinaire, boissons et produits. Avez-vous besoin de photos culinaires pour votre restaurant ? N'hésitez pas à nous contactez.`);
         } else {
@@ -53,31 +53,35 @@ const Homepage = ({ language, setLanguage }) => {
         }
     }, [language]);
 
+    const scrollUp = () => {
+        if (imageIndex === 0) {
+            endAnim = false;
+            imageIndex = 3;
+            const addHeroElement = document.querySelector(`.hero${imageIndex + 1}`);
+            const removeHeroElement = document.querySelector(`.hero1`);
+            addHeroElement.classList.add('active');
+            removeHeroElement.classList.remove('active');
+            setTimeout(() => {
+                endAnim = true;
+            }, 600);
+        } else {
+            endAnim = false;
+            imageIndex--;
+            const addHeroElement = document.querySelector(`.hero${imageIndex + 1}`);
+            const removeHeroElement = document.querySelector(`.hero${imageIndex + 2}`);
+            addHeroElement.classList.add('active');
+            removeHeroElement.classList.remove('active');
+            setTimeout(() => {
+                endAnim = true;
+            }, 600);
+        }
+    };
+
     const scrollEventHandler = (event) => {
         const yDelta = event.deltaY;
         if (endAnim) {
             if (yDelta / 100 < 0) {
-                if (imageIndex === 0) {
-                    endAnim = false;
-                    imageIndex = 3;
-                    const addHeroElement = document.querySelector(`.hero${imageIndex + 1}`);
-                    const removeHeroElement = document.querySelector(`.hero1`);
-                    addHeroElement.classList.add('active');
-                    removeHeroElement.classList.remove('active');
-                    setTimeout(() => {
-                        endAnim = true;
-                    }, 600);
-                } else {
-                    endAnim = false;
-                    imageIndex--;
-                    const addHeroElement = document.querySelector(`.hero${imageIndex + 1}`);
-                    const removeHeroElement = document.querySelector(`.hero${imageIndex + 2}`);
-                    addHeroElement.classList.add('active');
-                    removeHeroElement.classList.remove('active');
-                    setTimeout(() => {
-                        endAnim = true;
-                    }, 600);
-                }
+                scrollUp();
             } else {
                 if (imageIndex === 3) {
                     endAnim = false;
@@ -115,13 +119,13 @@ const Homepage = ({ language, setLanguage }) => {
     return (
         <header onWheel={(e) => scrollEventHandler(e)} className="homepageContainer">
             {
-                    pageLoading ?
-                        <div className="homePageSkeleton">
-                            <HomeLoading />
-                        </div>
-                        :
-                        <div></div>
-                }
+                pageLoading ?
+                    <div className="homePageSkeleton">
+                        <HomeLoading />
+                    </div>
+                    :
+                    <div></div>
+            }
             <main className={`homeFoodContainer hero1 justify-content-start justify-content-md-end active`}>
                 <div className="homeImageContainer">
                     <img onLoad={() => onImageLoad()} src={FrenchToastImage} alt="French toast food photography by Fleury Photography" />

@@ -62,7 +62,7 @@ const AboutPage = ({ language, setLanguage }) => {
             }
             <header className="row">
                 <div className="col-12 aboutImageContainer">
-                    <img onLoad={() => onImageLoad()} src={AboutHeader} alt="" />
+                    <img onLoad={() => onImageLoad()} src={AboutHeader} alt="Tea set header" />
                 </div>
             </header>
             <div className="row">
@@ -78,7 +78,7 @@ const AboutPage = ({ language, setLanguage }) => {
                 </div>
                 <div className="col-12 col-md-4">
                     <div className="profilePictureContainer">
-                        <img onLoad={() => onImageLoad()} src={JFleuryProfile} alt="" />
+                        <img onLoad={() => onImageLoad()} src={JFleuryProfile} alt="Profile of photographer Julien Fleury" />
                     </div>
                 </div>
                 <div className="col-12 col-md-6">
