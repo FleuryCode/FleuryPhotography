@@ -89,7 +89,7 @@
     .mainArrowContainer {
         z-index: 50;
         display: flex;
-        justify-content: end;
+        justify-content: flex-end;
         position: absolute;
         bottom: 0;
         right: 0;
@@ -99,7 +99,7 @@
             width: 100%;
             height: 100%;
             display: flex;
-            justify-content: end;
+            justify-content: flex-end;
             align-items: center;
 
             .lineContainer {
