@@ -20,7 +20,7 @@ const NotFound = () => { // SEO Data
             <div className="row">
                 <div className="col-12">
                     <div className="errorImageContainer">
-                        <img src={ErrorImage} alt="Broken camera 404 image" />
+                        <img src={ErrorImage} alt="Broken camera 404" />
                     </div>
                 </div>
             </div>

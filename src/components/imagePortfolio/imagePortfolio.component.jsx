@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef } from "react";
+import React, { useState, useRef } from "react";
 import './imagePortfolio.styles.scss';
 import { FoodImages, BeverageImages, ProductImages } from "../../assets/portfolioImages/ImageArrays";
 import { useLocation } from "react-router-dom";
