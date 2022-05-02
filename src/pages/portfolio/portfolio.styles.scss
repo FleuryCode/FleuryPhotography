@@ -25,7 +25,10 @@
     .portfolioTitleContainer {
         display: flex;
         justify-content: center;
-        margin-top: -100px;
+        margin-top: 100px;
+        @media (min-width: 768px) {
+            margin-top: -100px;
+        }
         h1 {
             text-align: center;
         }
