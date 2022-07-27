@@ -1,7 +1,19 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   reactStrictMode: true,
-  swcMinify: true,
-}
+  webpack(config) {
+    config.module.rules.push({
+      test: /\.svg$/,
+      use: ["@svgr/webpack"]
+    });
 
-module.exports = nextConfig
+    return config;
+  },
+  i18n: {
+    locales: ['en', 'fr'],
+    defaultLocale: 'fr',
+    localeDetection: false
+  },
+};
+
+module.exports = nextConfig;
