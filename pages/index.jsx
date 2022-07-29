@@ -5,6 +5,7 @@ import { useRouter } from 'next/router';
 import { useEffect } from 'react';
 import { useSwipeable } from 'react-swipeable';
 import styles from '../styles/home.module.scss';
+import { strings } from '../translations';
 // Main Images
 import PrimaryLayout from '../layouts/primaryLayout/primaryLayout.component';
 import BeerSplashImage from '../public/images/beersplash_main.jpg';
@@ -108,8 +109,8 @@ const Home = () => {
       onWheel={(e) => scrollEventHandler(e)}
     >
       <Head>
-        <title>Fleury Photography</title>
-        <meta name="description" content="Fleury Photography Description" />
+        <title>{strings[locale].homeTitle}</title>
+        <meta name="description" content={strings[locale].homeDescription} />
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <PrimaryLayout>
@@ -119,6 +120,7 @@ const Home = () => {
           >
             <div className={styles.homeImageContainer}>
               <Image
+                priority
                 layout="fill"
                 objectFit="cover"
                 src={FrenchToastImage}
@@ -126,14 +128,10 @@ const Home = () => {
               />
             </div>
             <div className={styles.homeTextInfo}>
-              <h1>{'FOOD'}</h1>
-              <h2>
-                {
-                  'Good photos of food evoke emotion. Great photos drive action; people visit restaurants, buy prepared dinners online, or try recipes they wouldn’t otherwise. Need photos for your restaurant website, culinary magazine, or blog? Contact us.'
-                }
-              </h2>
+              <h1>{strings[locale].foodHeader}</h1>
+              <h2>{strings[locale].foodBody}</h2>
               <Link href={'/'} className={styles.viewPortfolioButton}>
-                {'View Portfolio'}
+                {strings[locale].viewPortfolio}
               </Link>
             </div>
           </main>
@@ -142,6 +140,7 @@ const Home = () => {
           >
             <div className={styles.homeImageContainer}>
               <Image
+                priority
                 layout="fill"
                 objectFit="cover"
                 src={FloatingBeerImage}
@@ -149,14 +148,10 @@ const Home = () => {
               />
             </div>
             <div className={styles.homeTextInfo}>
-              <h1>{'BEVERAGE'}</h1>
-              <h2>
-                {
-                  'An image is capable of influencing an individual to buy a fine wine, river beer, or happy hour cocktail, and that’s pretty powerful. Fleury Photography can shoot any beverage product to promote your brand and have the public thirsting for more.'
-                }
-              </h2>
+              <h1>{strings[locale].beverageHeader}</h1>
+              <h2>{strings[locale].beverageBody}</h2>
               <Link href={'/'} className={styles.viewPortfolioButton}>
-                {'View Portfolio'}
+                {strings[locale].viewPortfolio}
               </Link>
             </div>
           </div>
@@ -165,6 +160,7 @@ const Home = () => {
           >
             <div className={styles.homeImageContainer}>
               <Image
+                priority
                 layout="fill"
                 objectFit="cover"
                 src={ElianaBowlImage}
@@ -172,14 +168,10 @@ const Home = () => {
               />
             </div>
             <div className={styles.homeTextInfo}>
-              <h1>{'PRODUCT'}</h1>
-              <h2>
-                {
-                  'Commercial product photography is the house specialty. We have has worked with online retailers, technology vendors, beauty salons, and camera suppliers to give their products personality. Using a delicate balance of lighting and expert photography, we bring to life even the smallest details.'
-                }
-              </h2>
+              <h1>{strings[locale].productHeader}</h1>
+              <h2>{strings[locale].productBody}</h2>
               <Link href={'/'} className={styles.viewPortfolioButton}>
-                {'View Portfolio'}
+                {strings[locale].viewPortfolio}
               </Link>
             </div>
           </div>
@@ -188,6 +180,7 @@ const Home = () => {
           >
             <div className={styles.homeImageContainer}>
               <Image
+                priority
                 layout="fill"
                 objectFit="cover"
                 src={BeerSplashImage}
@@ -195,14 +188,10 @@ const Home = () => {
               />
             </div>
             <div className={styles.homeTextInfo}>
-              <h1>{'VIDEO'}</h1>
-              <h2>
-                {
-                  'Videos are the way forward. A good video can invoke someone to come to your restaurant, buy your beer or try your beauty products. Let us bring your vision into motion with our videography.'
-                }
-              </h2>
+              <h1>{strings[locale].videoHeader}</h1>
+              <h2>{strings[locale].videoBody}</h2>
               <Link href={'/'} className={styles.viewPortfolioButton}>
-                {'View Portfolio'}
+                {strings[locale].viewPortfolio}
               </Link>
             </div>
           </div>

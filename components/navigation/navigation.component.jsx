@@ -1,6 +1,7 @@
 import Link from 'next/link';
 import { useRouter } from 'next/router';
 import { useState } from 'react';
+import { strings } from '../../translations';
 //Icons
 import MailIcon from '../../public/icons/emailIcon.svg';
 import FleuryLogo from '../../public/icons/fpLogo.svg';
@@ -40,7 +41,7 @@ const Navigation = () => {
             PORTFOLIO
           </Link>
           <Link className={styles.mainNavItem} href={'/about'}>
-            ABOUT
+            {strings[locale].about}
           </Link>
           <Link className={styles.mainNavItem} href={'/contact'}>
             CONTACT
@@ -127,7 +128,7 @@ const Navigation = () => {
               PORTFOLIO
             </Link>
             <Link className={styles.mobileNavItem} href={'/about'}>
-              ABOUT
+              {strings[locale].about}
             </Link>
             <Link className={styles.mobileNavItem} href={'/contact'}>
               CONTACT
