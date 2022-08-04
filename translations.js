@@ -14,6 +14,14 @@ export const strings = {
         videoHeader: "VIDEO",
         videoBody: "Videos are the way forward. A good video can invoke someone to come to your restaurant, buy your beer or try your beauty products. Let us bring your vision into motion with our videography.",
         viewPortfolio: "View Portfolio",
+        //About
+        aboutDescription: 'About Julien Fleury, the photographer of Fleury photography. Specializing in food, beverage and product photography. Based out of Nice, France. Creative lifestyle photography usually focused around food photography is his specialty.',
+        aboutTitle: 'About | Food Photographer Nice France',
+        aboutHeader: 'About',
+        aboutInfoOne: 'Julien Fleury is a photographer and videographer working out of both Nice, France. Specializing in commercial food photography for restaurants, beverage photography for breweries and product photography for companies trying to showcase their products in a creative way.',
+        aboutInfoTwo: 'Traveling the world as an international food photographer, Julien has worked with many different clients and cuisines. Being from France, food is a major inspiration for him and he tries to bring the love for food and drink into his work.',
+        aboutClientList: 'Client List:',
+
 
     },
     fr: {
@@ -31,5 +39,12 @@ export const strings = {
         videoHeader: "VIDÉO",
         videoBody: "Les vidéos sont la voie à suivre. Une bonne vidéo peut inciter quelqu'un à venir dans votre restaurant, acheter votre bière ou essayer vos produits de beauté. Laissez-nous mettre votre vision en mouvement avec notre vidéographie.",
         viewPortfolio: "Voir le Portfolio",
+        //About
+        aboutDescription: 'A propos de Julien Fleury, le photographe de Fleury photography. Spécialisé dans la photographie culinaire, de boissons et de produits. Basé à Nice, France. La photographie culinaire artistique est sa spécialité, travaillant avec des restaurants et des entreprises pour mieux présenter leurs produits de manière créative.',
+        aboutTitle: 'Bio | Photographe Commercial International',
+        aboutHeader: 'Bio',
+        aboutInfoOne: 'Julien Fleury est un photographe et vidéaste qui travaille à la fois à Nice, France, à Paris, France et à Austin, Texas. Spécialisé dans la photographie alimentaire commerciale pour les restaurants, la photographie de boissons pour les brasseries et la photographie de produits pour les entreprises essayant de présenter leurs produits de manière créative.',
+        aboutInfoTwo: "Voyageant à travers le monde en tant que photographe culinaire international, Julien a travaillé avec de nombreux clients et cuisines différents. Originaire de France, la nourriture est une source d'inspiration majeure pour lui et il essaie d'intégrer l'amour de la nourriture et des boissons dans son travail.",
+        aboutClientList: 'Liste de Clients:',
     }
 }
