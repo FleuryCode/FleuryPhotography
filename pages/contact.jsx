@@ -52,11 +52,11 @@ const Contact = () => {
       setEmail('');
       setPhone('');
       setMessage('');
-      setDisplayMessage('Thank you for your message');
+      setDisplayMessage(strings[locale].messageSent);
       setMessageSent(true);
     } catch (error) {
       console.log(error);
-      setDisplayMessage('Sorry, something went wrong');
+      setDisplayMessage(strings[locale].messageSentError);
       setMessageSent(true);
     }
   };
@@ -74,7 +74,7 @@ const Contact = () => {
       await sendAxiosMessage();
       setMessageSending(false);
     } else {
-      setDisplayMessage('Please fill in all the information');
+      setDisplayMessage(strings[locale].fillAllIn);
       setMessageSent(true);
     }
   };
@@ -105,8 +105,8 @@ const Contact = () => {
   return (
     <div className={styles.container}>
       <Head>
-        <title>{strings[locale].aboutTitle}</title>
-        <meta name="description" content={strings[locale].aboutDescription} />
+        <title>{strings[locale].contactTitle}</title>
+        <meta name="description" content={strings[locale].contactDescription} />
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <PrimaryLayout>
@@ -124,7 +124,7 @@ const Contact = () => {
           </div>
           <header className="row">
             <div className={`col-12 ${styles.contactTitleContainer}`}>
-              <h1>{'Contact Us'}</h1>
+              <h1>{strings[locale].contactHeader}</h1>
             </div>
           </header>
           <main className={`row mt-4 px-4 ${styles.contactFormContainer}`}>
@@ -137,7 +137,9 @@ const Contact = () => {
                 placeholder={'John'}
                 onChangeHandle={inputChangeHandle}
               />
-              <label htmlFor="firstName">{'First Name'}</label>
+              <label htmlFor="firstName">
+                {strings[locale].contactFirstName}
+              </label>
             </div>
             <div className="col-12 col-md-6 mb-4">
               <CustomInput
@@ -148,7 +150,9 @@ const Contact = () => {
                 placeholder={'Smith'}
                 onChangeHandle={inputChangeHandle}
               />
-              <label htmlFor="lastName">{'Last Name'}</label>
+              <label htmlFor="lastName">
+                {strings[locale].contactLastName}
+              </label>
             </div>
             <div className="col-12 col-md-8 mb-4">
               <CustomInput
@@ -170,7 +174,7 @@ const Contact = () => {
                 placeholder={'06 55 55 55 55'}
                 onChangeHandle={inputChangeHandle}
               />
-              <label htmlFor="phone">{'Number'}</label>
+              <label htmlFor="phone">{strings[locale].contactNumber}</label>
             </div>
             <div className="col-12 mb-4">
               <CustomTextArea
@@ -203,7 +207,7 @@ const Contact = () => {
             </div>
             <div className="col-8 col-sm-4 col-md-2 ms-auto me-auto me-md-0 mb-3">
               <CustomButton
-                text={'Send'}
+                text={strings[locale].contactSend}
                 specificClass={'contactButton'}
                 asyncHandle={messageSending}
                 onClickHandle={messageSendButtonClick}

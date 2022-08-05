@@ -21,6 +21,17 @@ export const strings = {
         aboutInfoOne: 'Julien Fleury is a photographer and videographer working out of both Nice, France. Specializing in commercial food photography for restaurants, beverage photography for breweries and product photography for companies trying to showcase their products in a creative way.',
         aboutInfoTwo: 'Traveling the world as an international food photographer, Julien has worked with many different clients and cuisines. Being from France, food is a major inspiration for him and he tries to bring the love for food and drink into his work.',
         aboutClientList: 'Client List:',
+        //Contact
+        contactDescription: 'Contact Fleury Photography about your next project to get a quote. If you are in need of product photography, reach out with any questions you have and we will see how we can help you.',
+        contactTitle: 'Contact Us For Your Photography Needs | Get a Quote',
+        contactHeader: 'Contact Us',
+        contactFirstName: 'First Name',
+        contactLastName: 'Last Name',
+        contactNumber: 'Number',
+        contactSend: 'Send',
+        messageSent: 'Thank you for your message',
+        messageSentError: 'Sorry, something went wrong',
+        fillAllIn: 'Please fill in all the information',
 
 
     },
@@ -46,5 +57,16 @@ export const strings = {
         aboutInfoOne: 'Julien Fleury est un photographe et vidéaste qui travaille à la fois à Nice, France, à Paris, France et à Austin, Texas. Spécialisé dans la photographie alimentaire commerciale pour les restaurants, la photographie de boissons pour les brasseries et la photographie de produits pour les entreprises essayant de présenter leurs produits de manière créative.',
         aboutInfoTwo: "Voyageant à travers le monde en tant que photographe culinaire international, Julien a travaillé avec de nombreux clients et cuisines différents. Originaire de France, la nourriture est une source d'inspiration majeure pour lui et il essaie d'intégrer l'amour de la nourriture et des boissons dans son travail.",
         aboutClientList: 'Liste de Clients:',
+        //Contact
+        contactDescription: 'Contactez Fleury Photographie à propos de votre prochain projet pour obtenir un devis. Si vous avez besoin de photographies de produits, posez toutes vos questions et nous verrons comment nous pouvons vous aider.',
+        contactTitle: 'Contactez-Nous Pour Vos Besoins en Photographie | Demandez un Devis',
+        contactHeader: 'Demandez un devis pour votre prochain project',
+        contactFirstName: 'Prénom',
+        contactLastName: 'Nom',
+        contactNumber: 'Numéro',
+        contactSend: 'Envoyer',
+        messageSent: 'Merci pour votre message',
+        messageSentError: "Désolé, quelque chose s'est mal passé",
+        fillAllIn: 'Veuillez entrer toutes les informations SVP',
     }
 }
