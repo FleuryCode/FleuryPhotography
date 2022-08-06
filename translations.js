@@ -32,6 +32,13 @@ export const strings = {
         messageSent: 'Thank you for your message',
         messageSentError: 'Sorry, something went wrong',
         fillAllIn: 'Please fill in all the information',
+        //Portfolio
+        portfolioDescription: "Portfolio sections of Fleury Photography's work. Sections include food, beverage, product and video. We specialize in food photography for high end restaurants, beer photography for breweries, product photography for e-commerce and videography.",
+        portfolioTitle: 'Portfolio | Food, Beverage, Product Video',
+        portfolioFood: 'Food',
+        portfolioBeverage: 'Beverage',
+        portfolioProduct: 'Product',
+        portfolioVideo: 'Video',
 
 
     },
@@ -68,5 +75,12 @@ export const strings = {
         messageSent: 'Merci pour votre message',
         messageSentError: "Désolé, quelque chose s'est mal passé",
         fillAllIn: 'Veuillez entrer toutes les informations SVP',
+        //Portfolio
+        portfolioDescription: 'ections portfolio du travail de Fleury Photography. Les sections comprennent culinaire, les boissons, les produits et la vidéo. Nous spécialisons dans la photographie culinaire pour les restaurants haut de gamme, la photographie de bière pour les brasseries, la photographie de produits pour le commerce électronique et la vidéographie.',
+        portfolioTitle: 'Portfolio | Culinaire, Boissons, Produits & Vidéo',
+        portfolioFood: 'Culinaire',
+        portfolioBeverage: 'Boissons',
+        portfolioProduct: 'Produit',
+        portfolioVideo: 'Vidéo',
     }
 }
