@@ -1,4 +1,5 @@
 import { useRouter } from 'next/router';
+import CookieConsent from '../../components/cookieConsent/cookieConsent.component';
 import Footer from '../../components/footer/footer.component';
 import Navigation from '../../components/navigation/navigation.component';
 import styles from './primaryLayout.module.scss';
@@ -18,6 +19,7 @@ const PrimaryLayout = ({ children }) => {
       ) : (
         <div></div>
       )}
+      <CookieConsent />
     </div>
   );
 };
