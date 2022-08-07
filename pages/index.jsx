@@ -130,7 +130,10 @@ const Home = () => {
             <div className={styles.homeTextInfo}>
               <h1>{strings[locale].foodHeader}</h1>
               <h2>{strings[locale].foodBody}</h2>
-              <Link href={'/'} className={styles.viewPortfolioButton}>
+              <Link
+                href={'/portfolio/food'}
+                className={styles.viewPortfolioButton}
+              >
                 {strings[locale].viewPortfolio}
               </Link>
             </div>
@@ -150,7 +153,10 @@ const Home = () => {
             <div className={styles.homeTextInfo}>
               <h1>{strings[locale].beverageHeader}</h1>
               <h2>{strings[locale].beverageBody}</h2>
-              <Link href={'/'} className={styles.viewPortfolioButton}>
+              <Link
+                href={'/portfolio/beverage'}
+                className={styles.viewPortfolioButton}
+              >
                 {strings[locale].viewPortfolio}
               </Link>
             </div>
@@ -170,7 +176,10 @@ const Home = () => {
             <div className={styles.homeTextInfo}>
               <h1>{strings[locale].productHeader}</h1>
               <h2>{strings[locale].productBody}</h2>
-              <Link href={'/'} className={styles.viewPortfolioButton}>
+              <Link
+                href={'/portfolio/product'}
+                className={styles.viewPortfolioButton}
+              >
                 {strings[locale].viewPortfolio}
               </Link>
             </div>
@@ -190,7 +199,10 @@ const Home = () => {
             <div className={styles.homeTextInfo}>
               <h1>{strings[locale].videoHeader}</h1>
               <h2>{strings[locale].videoBody}</h2>
-              <Link href={'/'} className={styles.viewPortfolioButton}>
+              <Link
+                href={'/portfolio/video'}
+                className={styles.viewPortfolioButton}
+              >
                 {strings[locale].viewPortfolio}
               </Link>
             </div>

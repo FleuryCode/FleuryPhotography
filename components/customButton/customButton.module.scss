@@ -3,9 +3,11 @@
     justify-content: center;
     align-items: center;
     cursor: pointer;
-    .spinner-border {
+
+    .spinnerBorder {
         color: white; //Spinner color
     }
+
     // Include specificClass style changes here with &
     &.contactButton {
         background-color: rgb(155, 72, 24);
@@ -17,6 +19,7 @@
         border-radius: 12px;
         box-shadow: 0 4px 4px rgba(0, 0, 0, 0.2);
         transition: background-color 0.3s ease-in-out;
+
         &:hover {
             background-color: rgb(236, 99, 19);
         }

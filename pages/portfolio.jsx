@@ -39,7 +39,7 @@ const Portfolio = () => {
           </div>
           <main className={`${styles.portfolioSelectors} row`}>
             <div className="col-12 col-lg-3">
-              <Link href={'/'}>
+              <Link href={'/portfolio/food'}>
                 <div
                   className={`${styles.portfolioSelectorContainer} ${styles.foodSelector}`}
                 >
@@ -48,7 +48,7 @@ const Portfolio = () => {
               </Link>
             </div>
             <div className="col-12 col-lg-3">
-              <Link href={'/'}>
+              <Link href={'/portfolio/beverage'}>
                 <div
                   className={`${styles.portfolioSelectorContainer} ${styles.beverageSelector}`}
                 >
@@ -57,7 +57,7 @@ const Portfolio = () => {
               </Link>
             </div>
             <div className="col-12 col-lg-3">
-              <Link href={'/'}>
+              <Link href={'/portfolio/product'}>
                 <div
                   className={`${styles.portfolioSelectorContainer} ${styles.productSelector}`}
                 >
@@ -66,7 +66,7 @@ const Portfolio = () => {
               </Link>
             </div>
             <div className="col-12 col-lg-3">
-              <Link href={'/'}>
+              <Link href={'/portfolio/video'}>
                 <div
                   className={`${styles.portfolioSelectorContainer} ${styles.videoSelector}`}
                 >

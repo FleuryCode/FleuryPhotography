@@ -2,6 +2,7 @@ export const strings = {
     en: {
         //Navigation
         about: 'ABOUT',
+        footerAbout: 'About',
         //HomePage
         homeDescription: 'Fleury Photography is an international food photographer and videographer based out of Nice, France. Specializing in food, beverage and product photography. Need creative lifestyle product photography? Feel free to contact us.',
         homeTitle: 'Commercial Food & Product Photographer | Nice France',
@@ -39,12 +40,25 @@ export const strings = {
         portfolioBeverage: 'Beverage',
         portfolioProduct: 'Product',
         portfolioVideo: 'Video',
+        //Food Portfolio
+        foodDescription: 'Food photography portfolio of Nice, France based food photographer Fleury Photography. Everything from online menus, high end websites to magazine publications. If you are in need of a food product photographer for your next project, reach out and we will see how we can help.',
+        foodTitle: 'Food Photography Portfolio | Professional Food Photographs',
+        //Beverage Portfolio
+        beverageDescription: 'Fleury Photography beverage photography portfolio. Images of beer, wine and cocktails. We can provide the best drink photography to showcase your new craft beer, bottle of wine or that new cocktail in some beautiful glassware.',
+        beverageTitle: 'Beverage Photography Portfolio | Beer, Wine & Spirits',
+        //Product Portfolio
+        productDescription: 'Product photography portfolio. Fleury Photography has worked with ceramic artists around the world, CBD companies and the medical industry. If you have a product you wish to sell on e-commerce websites, we can help create the best images to showcase the product.',
+        productTitle: 'Product Photography Portfolio | Medical Equipment, Cosmetics & Ceramics',
+        //Video Portfolio
+        videoDescription: 'Videography portfolio of Nice, France based photographer / videographer Julien Fleury. Specializing in food and beverage videography. Creating videos to showcase your food, product or beverage. We can provide slow motion videos as well as videos of an artist, chef or brewer doing their work.',
+        videoTitle: 'Video Portfolio | Food, Beverage & Product',
 
 
     },
     fr: {
         //Navigation
         about: 'BIO',
+        footerAbout: 'Bio',
         //HomePage
         homeDescription: "Fleury Photography est un photographe et vidéaste culinaire international basé à Nice, France. Spécialisé dans la photographie culinaire, boissons et produits. Avez-vous besoin de photos culinaires pour votre restaurant ? N'hésitez pas à nous contactez.",
         homeTitle: 'Photographe Culinaire & Produits Commercial | Nice France',
@@ -82,5 +96,17 @@ export const strings = {
         portfolioBeverage: 'Boissons',
         portfolioProduct: 'Produit',
         portfolioVideo: 'Vidéo',
+        //Food Portfolio
+        foodDescription: "Portfolio de photographie culinaire de Fleury Photography, photographe culinaire basé à Nice, France. Pour des menus en ligne, des sites Web haut de gamme et publications de magazines. Si vous avez besoin d'un photographe de produits alimentaires pour votre prochain projet, contactez-nous et nous verrons comment nous pouvons vous aider.",
+        foodTitle: 'Portfolio de Photographie Culinaire | Photographs Culinaires Professionnelles',
+        //Beverage Portfolio
+        beverageDescription: 'Portfolio de photographies de boissons par Fleury Photography. Images de bière, de vin et de cocktails. Nous pouvons fournir la meilleure photographie de boisson pour présenter votre nouvelle bière artisanale, bouteille de vin ou ce nouveau cocktail dans une belle verrerie.',
+        beverageTitle: 'Portfolio de Photographie de Boissons | Bière, Vin & Alcool',
+        //Product Portfolio
+        productDescription: "Portfolio de photographies de produits. Fleury Photography a travaillé avec des artistes céramistes du monde entier, des sociétés CBD et l'industrie médicale. Si vous avez un produit que vous souhaitez vendre sur des sites web de e-commerce électronique, nous pouvons vous aider à créer les meilleures images pour présenter le produit.",
+        productTitle: 'Portefeuille de Photographies de Produits | Ceramics, Produits de Beauté & Équipement Médical',
+        //Video Portfolio
+        videoDescription: "Portfolio vidéographique du photographe / vidéaste Julien Fleury basé à Nice, France. Spécialisé dans la vidéographie des aliments et des boissons. Nous pouvons fournir des vidéos au ralenti ainsi que des vidéos d'un artiste, d'un chef ou d'un brasseur faisant leur travail.",
+        videoTitle: 'Portfolio Vidéo | Culinaire, Boissons & Produits',
     }
 }

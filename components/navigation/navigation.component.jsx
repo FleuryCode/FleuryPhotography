@@ -31,7 +31,9 @@ const Navigation = () => {
           </div>
         ) : (
           <Link href={'/'}>
-            <FleuryLogo />
+            <div>
+              <FleuryLogo />
+            </div>
           </Link>
         )}
       </div>
