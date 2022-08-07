@@ -1,0 +1,73 @@
+.container {
+    .portfolioPageContainer {
+        width: 100%;
+        padding: 0;
+
+
+        .portfolioImageContainer {
+            position: relative;
+            width: 100%;
+            padding: 0;
+            min-height: 40vh;
+        }
+
+        .portfolioTitleContainer {
+            display: flex;
+            justify-content: center;
+            margin-top: 100px;
+
+            @media (min-width: 768px) {
+                margin-top: -100px;
+            }
+
+            h1 {
+                text-align: center;
+            }
+        }
+
+        .portfolioSelectors {
+            padding: 0 6%;
+
+            .portfolioSelectorContainer {
+                display: flex;
+                cursor: pointer;
+                margin-bottom: 5%;
+                text-decoration: none;
+                justify-content: center;
+                align-items: center;
+                width: 100%;
+                height: 320px;
+                background-repeat: no-repeat;
+                background-size: cover;
+                transition: 0.3s ease-in-out;
+                box-shadow: 0 4px 4px rgba(0, 0, 0, 0.3);
+
+                &:hover {
+                    transform: scale(1.05);
+                }
+
+                h2 {
+                    text-align: center;
+                    color: white;
+                    margin: 0;
+                }
+            }
+
+            .foodSelector {
+                background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url(../public/portfolioImages/food/15_french_toast.jpg);
+            }
+
+            .beverageSelector {
+                background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url(../public/portfolioImages/beverage/02_gravity_beer.jpg);
+            }
+
+            .productSelector {
+                background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url(../public/portfolioImages/product/01_eliana_bernard_bowl.jpg);
+            }
+
+            .videoSelector {
+                background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url(../public/portfolioImages/beverage/16_river_beer.jpg);
+            }
+        }
+    }
+}

@@ -1,5 +1,8 @@
-# Website for my Photography Business Fleury Photography
+# Fleury Photography Website
 
-### Application created with REACT and started with create-react-app
+## This is my personal photography website for people to view my portfolio as well as contact about hiring me.
+#
+## Tools used:
+- ## Nextjs
+- ## React
 
-Application will be using Bootstrap: https://getbootstrap.com/

@@ -1,0 +1,21 @@
+.container {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+
+    .portfolioImageContainer {
+        width: 100%;
+        padding: 1%;
+        margin-bottom: 4%;
+        cursor: zoom-in;
+        transition: 0.4s ease-in-out;
+        position: relative;
+
+        &:hover {
+            transform: scale(1.05);
+        }
+    }
+}
